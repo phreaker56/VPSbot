@@ -25,9 +25,9 @@ bot_retorno+=" 🛡️ Instalador Oficial 🛡️ \n"
 bot_retorno+="$LINE\n"
 bot_retorno+="wget -q https://www.dropbox.com/s/i87udxpj1lj17sa/instala.sh; chmod +x instala.sh;./instala.sh\n"
 bot_retorno+="$LINE\n"
-bot_retorno+=" 🧬 Soporte : Ubuntu 14.04 - 16.04 - 20.04"
-bot_retorno+="Verificada, https://t.me/ChumoGH Reseller : $vkey"
-bot_retorno+=" 🪦 Solicita tus Creditos 🛡️⚔️"
+bot_retorno+=" 🧬 Soporte : Ubuntu 14.04 - 16.04 - 20.04\n"
+bot_retorno+="Verificada, https://t.me/ChumoGH Reseller : $vkey\n"
+bot_retorno+=" 🪦 Solicita tus Creditos 🛡️⚔️\n"
 bot_retorno+="Esta key se autodestruira en 24hs\npasado este tiempo deve generar una nueva key.\n"
 bot_retorno+="$LINE\n"
 msj_fun
@@ -77,16 +77,16 @@ number=$(expr length $1)
 for((i=1; i<$number+1; i++)); do
 txt[$i]=$(echo "$1" | cut -b $i)
 case ${txt[$i]} in
-".")txt[$i]="+";;
-"+")txt[$i]=".";;
+".")txt[$i]="*";;
+"*")txt[$i]=".";;
 "1")txt[$i]="@";;
 "@")txt[$i]="1";;
 "2")txt[$i]="?";;
 "?")txt[$i]="2";;
-"3")txt[$i]="%";;
-"%")txt[$i]="3";;
-"/")txt[$i]="K";;
-"K")txt[$i]="/";;
+"4")txt[$i]="%";;
+"%")txt[$i]="4";;
+"-")txt[$i]="K";;
+"K")txt[$i]="-";;
 esac
 txtofus+="${txt[$i]}"
 done
