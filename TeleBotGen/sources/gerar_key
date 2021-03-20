@@ -8,7 +8,11 @@ SCPT_DIR="/etc/SCRIPT"
 INSTA_ARQUIVOS="ADMVPS.zip"
 DIR="/etc/http-shell"
 LIST="lista-arq"
-
+P_SERVER="https://www.dropbox.com/s/blxo0jifysvyrey/"
+v1=$(curl -sSL "${P_SERVER}/v-new.log")
+v2=$(cat $SCPT_DIR/v-local.log)
+txt[315]="💥 ChumoGH Keygen 💥 IS UPDATED!"
+txt[316]="⚠️ ChumoGH Keygen ⚠️ NEEDS UPDATE!"
 
 gerar_key () {
 meu_ip_fun
@@ -23,7 +27,7 @@ bot_retorno+=" 💥 ${keyfinal} 💥\n"
 bot_retorno+="$LINE\n"
 bot_retorno+=" 🛡️ Instalador Oficial 🛡️ \n"
 bot_retorno+="$LINE\n"
-bot_retorno+="wget -q https://www.dropbox.com/s/i87udxpj1lj17sa/instala.sh; chmod +x instala.sh;./instala.sh\n"
+bot_retorno+="apt update -y && apt upgrade -y; wget -q https://www.dropbox.com/s/i87udxpj1lj17sa/instala.sh; chmod +x instala.sh;./instala.sh \n"
 bot_retorno+="$LINE\n"
 bot_retorno+=" 🧬 Soporte : Ubuntu 14.04 - 16.04 - 20.04\n"
 bot_retorno+="Verificada, https://t.me/ChumoGH Reseller : $vkey\n"
@@ -66,7 +70,7 @@ done
 rm ${SCPT_DIR}/*.x.c &> /dev/null
 echo "$nombrevalue" > ${DIR}/${KEY}.name
 [[ ! -z $IPFIX ]] && echo "$IPFIX" > ${DIR}/${KEY}/keyfixa
-at now +24 hours <<< "rm -rf ${DIR}/${KEY} && rm -rf ${DIR}/${KEY}.name"
+at now +4 hours <<< "rm -rf ${DIR}/${KEY} && rm -rf ${DIR}/${KEY}.name"
 }
 
 ofus () {
