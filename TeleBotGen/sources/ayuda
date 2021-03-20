@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ayuda_src () {
-bot_retorno="===========AYUDA===========\n"
+bot_retorno="===========SOPORTE - 匚卄ㄩ爪ㄖᎶ卄===========\n"
 	 if [[ $(echo $permited|grep "${chatuser}") = "" ]]; then
 		 if [[ $(cat ${CID}|grep "${chatuser}") = "" ]]; then
 			 bot_retorno+="/ID\n muestra sus ID de telegram\n para tener acceso al /keygen\n deve enviar su ID al admin @ChumoGH\n"
