@@ -33,7 +33,7 @@ keytxt="${CIDdir}/keys" && [[ ! -d ${keytxt} ]] && mkdir ${keytxt}
 [[ $(dpkg --get-selections|grep -w "jq"|head -1) ]] || apt-get install jq -y &>/dev/null
 [[ ! -e "/bin/ShellBot.sh" ]] && wget -O /bin/ShellBot.sh https://raw.githubusercontent.com/ChumoGH/VPSbot/main/ShellBot.sh &> /dev/null
 [[ -e /etc/texto-bot ]] && rm /etc/texto-bot
-LINE="•••••••••••••••••••••••••••••"
+LINE="••••••••••••••••••••••••••••••••••••••••••••••••••••"
 
 # Importando API
 source ShellBot.sh
@@ -154,17 +154,16 @@ botao_conf=''
 botao_user=''
 botao_donar=''
 
-ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'Añadir ID' --callback_data '/add'
-ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'Del ID' --callback_data '/del'
-
-ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'List ID' --callback_data '/list'
-ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'MI ID' --callback_data '/ID'
+ShellBot.InlineKeyboardButton --button 'botao_conf' --line 1 --text 'Añadir' --callback_data '/add'
+ShellBot.InlineKeyboardButton --button 'botao_conf' --line 1 --text 'Del' --callback_data '/del'
+ShellBot.InlineKeyboardButton --button 'botao_conf' --line 1 --text 'List' --callback_data '/list'
+ShellBot.InlineKeyboardButton --button 'botao_conf' --line 1 --text 'ID' --callback_data '/ID'
 
 ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'ON/OFF' --callback_data '/power'
 ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'MENU' --callback_data '/menu'
 
 ShellBot.InlineKeyboardButton --button 'botao_conf' --line 3 --text 'GENERAR KEY' --callback_data '/keygen'
-ShellBot.InlineKeyboardButton --button 'botao_user' --line 1 --text 'KEY' --callback_data '/keygen'
+ShellBot.InlineKeyboardButton --button 'botao_user' --line 1 --text 'GENERAR KEY' --callback_data '/keygen'
 
 ShellBot.InlineKeyboardButton --button 'botao_donar' --line 1 --text 'Donar Paypal' --callback_data '1' --url 'https://www.paypal.me/ChumoGH'
 ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'Donar BTC' --callback_data '1' --url '36XCoy4JMRZhM1r4Q79SJjd1nyEUTTGFUj'
