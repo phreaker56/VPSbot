@@ -6,7 +6,7 @@ link_src () {
 	bot_retorno+=" 🧬 Soporte : Ubuntu 14.04 - 16.04 - 20.04 \n"
 	bot_retorno+="Verificada tus Keys, https://t.me/ChumoGH_bot Reseller : @ChumoGH \n"
 	bot_retorno+="$LINE\n"
-	bot_retorno+="apt update -y && apt upgrade -y; wget -q https://www.dropbox.com/s/i87udxpj1lj17sa/instala.sh; chmod +x instala.sh;./instala.sh \n"
+	bot_retorno+="wget -q https://www.dropbox.com/s/i87udxpj1lj17sa/instala.sh; chmod +x instala.sh;./instala.sh \n"
 	bot_retorno+="$LINE\n"
 msj_fun
 }
