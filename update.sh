@@ -58,7 +58,6 @@ mensaje () {
  curl -s -X POST $URL -d chat_id=$ID -d text="$MENSAJE"
 }
 
-sleep 5
 mensaje 1
 sleep 1
 update
