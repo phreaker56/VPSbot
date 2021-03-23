@@ -1,15 +1,15 @@
 #!/bin/bash
 menu_src () {
-bot_retorno="••••••••••• M E N U •••••••••••\n"
+bot_retorno="••••••••• ••••••••• M E N U ••••••••• •••••••••\n"
 	 if [[ $(echo $permited|grep "${chatuser}") = "" ]]; then
 		 if [[ $(cat ${CID}|grep "${chatuser}") = "" ]]; then
-			 bot_retorno+="/ID | Muestra sus ID |\n"
+			 bot_retorno+="/ID   | Muestra sus ID |\n"
 			 bot_retorno+="/menu | MENU DE COMANDOS |\n"
 			 bot_retorno+="/ayuda | INSTRUCCIONES DE COMANDOS |\n"
 			 bot_retorno+="$LINE\n"
 			 msj_fun
 		 else
-			 bot_retorno+="/ID | Muestra sus ID |\n"
+			 bot_retorno+="/ID   | Muestra sus ID |\n"
 			 bot_retorno+="/instal | INSTALADOR OFICIAL |\n"
 			 bot_retorno+="/menu | MENU DE COMANDOS | \n"
 			 bot_retorno+="/ayuda | INSTRUCCIONES DE COMANDOS |\n"
