@@ -7,46 +7,47 @@ v1=$(curl -sSL "${P_SERVER}/v-new.log")
 v2=$(cat $SCPT_DIR/v-local.log)
 txt[315]="💥 ChumoGH Keygen 💥 IS UPDATED!"
 txt[316]="⚠️ ChumoGH Keygen ⚠️ NEEDS UPDATE!"
-[[ $v1 = $v2 ]] && vesaoSCT="\033[1;32m${txt[315]} \033[0;33m ($v2)" || vesaoSCT="\033[1;31m${txt[316]}\033[0;33m($v2) ► \033[1;32m($v1)\033[1;31m"
+[[ $v1 = $v2 ]] && vesaoSCT="${txt[315]} ($v2)" || vesaoSCT="${txt[316]}($v2) ► ($v1)"
 
 menu_src () {
 bot_retorno="••••••••••• M E N U •••••••••••\n"
 	 if [[ $(echo $permited|grep "${chatuser}") = "" ]]; then
 		 if [[ $(cat ${CID}|grep "${chatuser}") = "" ]]; then
-			 bot_retorno+="/ID (muestra sus ID)\n"
-			 bot_retorno+="/menu (muestra este menu)\n"
-			 bot_retorno+="/ayuda (ayuda de los comandos)\n"
+			 bot_retorno+="/ID | Muestra sus ID |\n"
+			 bot_retorno+="/menu | MENU DE COMANDOS |\n"
+			 bot_retorno+="/ayuda | INSTRUCCIONES DE COMANDOS |\n"
 			 bot_retorno+="$LINE\n"
 			 msj_fun
 		 else
-			 bot_retorno+="/ID (muestra sus ID)\n"
-			 bot_retorno+="/instal (link de instalacion)\n"
-			 bot_retorno+="/menu (muestra este menu)\n"
-			 bot_retorno+="/ayuda (ayuda de los comandos)\n"
+			 bot_retorno+="/id | Muestra sus ID |\n"
+			 bot_retorno+="/instal | INSTALADOR OFICIAL |\n"
+			 bot_retorno+="/menu | MENU DE COMANDOS | \n"
+			 bot_retorno+="/ayuda | INSTRUCCIONES DE COMANDOS |\n"
 			 bot_retorno+="$LINE\n"
 			 menu_print
 		 fi
 		 
 	 else
 		 unset PID_GEN
+		 
 		 PID_GEN=$(ps x|grep -v grep|grep "http-server.sh")
 		 [[ ! $PID_GEN ]] && PID_GEN='(Offline) ❌' || PID_GEN='(Online) ✅'
 
 		 unset usadas
 		 usadas="$(cat /etc/http-instas)"
 		 [[ ! $usadas ]] && k_used="0" || k_used="$usadas"
-		 bot_retorno+="${vesaoSCT}"
+		 bot_retorno+="   ${vesaoSCT}"
 		 bot_retorno+="Gen $PID_GEN | Keys Used [$k_used]\n"
 
 		 bot_retorno+="$LINE\n"
-		 bot_retorno+="/infosys (info del sistema)\n"
-		 bot_retorno+="/list (lista de ID permitidas)\n"
-		 bot_retorno+="/instal (link de instalacion)\n"
-		 bot_retorno+="/menu (muestra este menu)\n"
-		 bot_retorno+="/ayuda (ayuda de los comandos)\n"
-		 bot_retorno+="/cache (Limpiar cache Ram)\n"
-		 bot_retorno+="/update (actualiza el BotGen)\n"
-		 bot_retorno+="/reboot (Reinicia el servidor vps)\n"
+		 bot_retorno+="/infosys | INFORMACION DE SERVIDOR |\n"
+		 bot_retorno+="/list | MUESTRA LISTA DE ID PERMITIDOS\n"
+		 bot_retorno+="/instal | INSTALADOR OFICIAL |\n"
+		 bot_retorno+="/menu | MENU DE ACCIONES |\n"
+		 bot_retorno+="/ayuda | INSTRUCCIONES DE COMANDOS |\n"
+		 bot_retorno+="/cache | OPTIMIZA SERVIDOR |\n"
+		 bot_retorno+="/update | ACTUALIZA BOT |\n"
+		 bot_retorno+="/reboot | REINICIA SERVIDOR VPS |\n"
 		 bot_retorno+="$LINE\n"
 		 menu_print
 	 fi	
