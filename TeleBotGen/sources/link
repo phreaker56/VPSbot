@@ -2,7 +2,6 @@
 
 link_src () {
 	bot_retorno="$LINE\n"
-	bot_retorno+="$LINE\n"
 	bot_retorno+=" 💥 Instalador Oficial 💥"
 	bot_retorno+=" 🧬 Soporte : Ubuntu 14.04 - 16.04 - 20.04 \n"
 	bot_retorno+="Verificada tus Keys, https://t.me/ChumoGH_bot Reseller : @ChumoGH \n"
