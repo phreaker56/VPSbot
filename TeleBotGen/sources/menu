@@ -1,7 +1,16 @@
 #!/bin/bash
 
+
+
+P_SERVER="https://www.dropbox.com/s/blxo0jifysvyrey/"
+v1=$(curl -sSL "${P_SERVER}/v-new.log")
+v2=$(cat $SCPT_DIR/v-local.log)
+txt[315]="💥 ChumoGH Keygen 💥 IS UPDATED!"
+txt[316]="⚠️ ChumoGH Keygen ⚠️ NEEDS UPDATE!"
+[[ $v1 = $v2 ]] && vesaoSCT="\033[1;32m${txt[315]} \033[0;33m ($v2)" || vesaoSCT="\033[1;31m${txt[316]}\033[0;33m($v2) ► \033[1;32m($v1)\033[1;31m"
+
 menu_src () {
-bot_retorno="=========COMANDOS=========\n"
+bot_retorno="••••••••••• M E N U •••••••••••\n"
 	 if [[ $(echo $permited|grep "${chatuser}") = "" ]]; then
 		 if [[ $(cat ${CID}|grep "${chatuser}") = "" ]]; then
 			 bot_retorno+="/ID (muestra sus ID)\n"
@@ -26,7 +35,7 @@ bot_retorno="=========COMANDOS=========\n"
 		 unset usadas
 		 usadas="$(cat /etc/http-instas)"
 		 [[ ! $usadas ]] && k_used="0" || k_used="$usadas"
-		 
+		 bot_retorno+="${vesaoSCT}"
 		 bot_retorno+="Gen $PID_GEN | Keys Used [$k_used]\n"
 
 		 bot_retorno+="$LINE\n"
