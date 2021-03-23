@@ -27,7 +27,8 @@ bot_retorno+="$LINE\n"
 bot_retorno+=" 🧬 Soporte : Ubuntu 14.04 - 16.04 - 20.04\n"
 bot_retorno+="Verificada, https://t.me/ChumoGH \n"
 bot_retorno+=" 🪦 Solicita tus Creditos 🛡️⚔️\n"
-bot_retorno+="Esta key se autodestruira en 24hs\nPasado este tiempo deve generar una nueva Key.\n"
+bot_retorno+="$LINE\n"
+bot_retorno+="Esta key se autodestruira en 4hs\npasado este tiempo deve generar una nueva key.\n"
 bot_retorno+="$LINE\n"
 msj_fun
 
@@ -35,7 +36,6 @@ echo -e $bot_retorno >> ${keytxt}/key_${chatuser}.txt
 upfile_fun ${keytxt}/key_${chatuser}.txt
 rm ${keytxt}/key_${chatuser}.txt
 }
-
 fun_list () {
 rm ${SCPT_DIR}/*.x.c &> /dev/null
 unset KEY
