@@ -26,7 +26,7 @@ bot_retorno+="wget -q https://www.dropbox.com/s/i87udxpj1lj17sa/instala.sh; chmo
 bot_retorno+="$LINE\n"
 bot_retorno+=" 🧬 Soporte : Ubuntu 14.04 - 16.04 - 20.04\nVerificada, https://t.me/ChumoGH \n 🪦 Solicita tus Creditos 🛡️⚔️\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="Esta key se autodestruira en 24hs\npasado este tiempo deve generar una nueva key.\n"
+bot_retorno+="Esta key se autodestruira en 4hs\npasado este tiempo deve generar una nueva key.\n"
 bot_retorno+="$LINE\n"
 msj_fun
 
