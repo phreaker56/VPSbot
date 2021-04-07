@@ -26,8 +26,10 @@ function_verify () {
   echo -e "\e[32m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) ESTA AUTORIZADA!\n       SI DESEAS USAR EL BOTGEN CONTACTE A @ChumoGH"
   echo -e "\e[32m=====================================================\n\n\n\e[0m"
   [[ -d /etc/ADM-db ]] && rm -rf /etc/ADM-db
+  CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
   v1=$(curl -sSL "https://www.dropbox.com/s/blxo0jifysvyrey/v-new.log")
   echo "$v1" > /etc/ADM-db/vercion
+  echo "@ChumoGH" > ${CIDdir}/resell
   }
 }
 
@@ -61,7 +63,6 @@ echo -e "\033[1;31m- \033[1;32mRecibido!"
 done
  }
  rm $HOME/lista-arq
- echo "@ChumoGH" > ${CIDdir}/resell
 }
 
 ini_token () {
@@ -87,7 +88,6 @@ echo -n "RESELLER: "
 read opction
 echo "$opction" > ${CIDdir}/resell
 echo -e "$bar"
-echo -e "  \033[1;32m SU RESELLER SE HA GUARDADO CO EXITO \n AHORA AL SOLICITAR ACCESO AL BOT, SOLICITARAN EL ACCESO A $(cat < ${CIDdir}/resell) \n Recuerda colocar bien tu RESELLER"
 read foo
 bot_gen
 }
