@@ -21,6 +21,11 @@ function_verify () {
   exit 1
   } || {
  ### INTALAR VERCION DE SCRIPT
+  clear
+  echo -e "\n\n\n\e[32m====================================================="
+  echo -e "\e[32m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) ESTA AUTORIZADA!\n       SI DESEAS USAR EL BOTGEN CONTACTE A @ChumoGH"
+  echo -e "\e[32m=====================================================\n\n\n\e[0m"
+  [[ -d /etc/ADM-db ]] && rm -rf /etc/ADM-db
   v1=$(curl -sSL "https://www.dropbox.com/s/blxo0jifysvyrey/v-new.log")
   echo "$v1" > /etc/ADM-db/vercion
   }
@@ -56,6 +61,7 @@ echo -e "\033[1;31m- \033[1;32mRecibido!"
 done
  }
  rm $HOME/lista-arq
+ echo "@ChumoGH" > ${CIDdir}/resell
 }
 
 ini_token () {
@@ -68,6 +74,20 @@ read opcion
 echo "$opcion" > ${CIDdir}/token
 echo -e "$bar"
 echo -e "  \033[1;32mtoken se guardo con exito!" && echo -e "$bar" && echo -e "  \033[1;37mPara tener acceso a todos los comandos del bot\n  deve iniciar el bot en la opcion 2.\n  desde su apps (telegram). ingresar al bot!\n  digite el comando \033[1;31m/id\n  \033[1;37mel bot le respodera con su ID de telegram.\n  copiar el ID e ingresar el mismo en la opcion 3" && echo -e "$bar"
+read foo
+bot_gen
+}
+
+ini_res () {
+clear
+echo -e "$bar"
+echo -e "  \033[1;37mIngrese el Contacto de ADMIN de su bot"
+echo -e "$bar"
+echo -n "RESELLER: "
+read opction
+echo "$opction" > ${CIDdir}/resell
+echo -e "$bar"
+echo -e "  \033[1;32m SU RESELLER SE HA GUARDADO CO EXITO \n AHORA AL SOLICITAR ACCESO AL BOT, SOLICITARAN EL ACCESO A $(cat < ${CIDdir}/resell) \n Recuerda colocar bien tu RESELLER"
 read foo
 bot_gen
 }
@@ -195,8 +215,9 @@ echo -e "$bar"
 echo -e "\033[1;32m[1] \033[1;36m> \033[1;37mTOKEN DEL BOT"
 echo -e "\033[1;32m[2] \033[1;36m> \033[1;37mINICIAR/PARAR BOT $PID_GEN\033[0m"
 echo -e "\033[1;32m[3] \033[1;36m> \033[1;37mID DE USUARIO TELEGRAM"
-echo -e "\033[1;32m[4] \033[1;36m> \033[1;37mMENSAJE DE PRUEBA"
-echo -e "\033[1;32m[5] \033[1;36m> \033[1;37mMANUAL"
+echo -e "\033[1;32m[4] \033[1;36m> \033[1;37m Cambiar Contacto -> $(cat < ${CIDdir}/resell)"
+echo -e "\033[1;32m[5] \033[1;36m> \033[1;37mMENSAJE DE PRUEBA"
+echo -e "\033[1;32m[6] \033[1;36m> \033[1;37mMANUAL"
 echo -e "$bar"
 echo -e "\e[1;32m[0] \e[36m>\e[0m \e[47m\e[30m <<ATRAS "
 echo -e "$bar"
@@ -207,8 +228,9 @@ case $opcion in
 1) ini_token;;
 2) start_bot;;
 3) ini_id;;
-4) msj_prueba;;
-5) ayuda_fun;;
+4) ini_res;;
+5) msj_prueba;;
+6) ayuda_fun;;
 *) bot_gen;;
 esac
 }
