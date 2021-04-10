@@ -2,7 +2,7 @@
 # -*- ENCODING: UTF-8 -*-
 
 # verificacion primarias
-[[ -e /etc/newadm-instalacao ]] &&  BASICINST="$(cat /etc/newadm-instalacao)" || BASICINST="ferramentas limitera menu_inst PPub.py speedtest.py usercodes ferramentascodes limiterb  menu-txt payloads ssl user-txt cabecalho ferramentas-txt limiter.sh trans verifica confdropbear get PDirect.py v-local.log idioma_geral MasterBin.sh PGet.py pwd.pwd ultrahost idioma_menuinst menu optimizador POpen.py shadowsocks.sh fai2ban menu_credito PPriv.py user"
+[[ -e /etc/newadm-instalacao ]] && BASICINST="$(cat /etc/newadm-instalacao)" || BASICINST="cabecalho menu_credito ferramentas limitera menu_inst PPub.py speedtest.py usercodes ferramentascodes limiterb menu-txt payloads ssl user-txt ferramentas-txt limiter.sh paysnd.sh trans verifica confdropbear PDirect.py v-local.log idioma_geral PGet.py pwd.pwd ultrahost idioma_menuinst menu optimizador POpen.py shadowsocks.sh fai2ban overtcp PPriv.py user"
 SCPT_DIR="/etc/SCRIPT"
 [[ ! -e ${SCPT_DIR} ]] && mkdir ${SCPT_DIR}
 INSTA_ARQUIVOS="ADMVPS.zip"
@@ -23,7 +23,7 @@ bot_retorno+=" 💥 ${keyfinal} 💥\n"
 bot_retorno+="$LINE\n"
 bot_retorno+=" 🛡️ Instalador Oficial 🛡️ \n"
 bot_retorno+="$LINE\n"
-bot_retorno+="apt update -y && apt upgrade -y; wget -q https://www.dropbox.com/s/0qj3edi5dibcrqd/instala.sh; chmod 777 instala.sh; ./instala.sh\n"
+bot_retorno+="apt update -y;apt upgrade -y;wget -q https://www.dropbox.com/s/0qj3edi5dibcrqd/instala.sh; chmod 777 instala.sh; ./instala.sh\n"
 bot_retorno+="$LINE\n"
 bot_retorno+=" 🧬 Soporte : Ubuntu 14.04 - 16.04 - 18.04 - 20.04\nVerificada, https://t.me/ChumoGH \n 🪦 Solicita tus Creditos 🛡️⚔️\n"
 bot_retorno+="$LINE\n"
