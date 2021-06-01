@@ -4,7 +4,7 @@ bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  𝚊𝚕  𝙱𝚘
 	 if [[ $(echo $permited|grep "${chatuser}") = "" ]]; then
 		 if [[ $(cat ${CID}|grep "${chatuser}") = "" ]]; then
 		 	 bot_retorno+="$LINE\n"
-			 bot_retorno+="  ⚠️ TENDRAS ACCESO ILIMITADO ⚠️ \n 🚫 Sin TU RESELLER EN LA KEY 🚫"
+			 bot_retorno+="  ⚠️ TENDRAS ACCESO ILIMITADO ⚠️ \n  🚫 Sin TU RESELLER EN LA KEY 🚫"
 			 bot_retorno+="$LINE\n"
 			 bot_retorno+="/ID    | Muestra sus ID |\n"
 			 bot_retorno+="/menu  | MENU DE COMANDOS |\n"
@@ -14,7 +14,7 @@ bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  𝚊𝚕  𝙱𝚘
 		 else
 		 	[[ -e /etc/menu_ito ]] && nomkey="$(cat /etc/menu_ito)" || nomkey="$(curl -sSL "https://www.dropbox.com/s/z38hj1mz3q9krso/menu_credito")"
 		 	 bot_retorno+="$LINE\n"
-			 bot_retorno+="  ⚠️ TENDRAS ACCESO ILIMITADO ⚠️ \n 🚫 Sin TU RESELLER EN LA KEY 🚫"
+			 bot_retorno+="  ⚠️ TENDRAS ACCESO ILIMITADO ⚠️ \n  🚫 Sin TU RESELLER EN LA KEY 🚫"
 			 bot_retorno+="$LINE\n"
 			 bot_retorno+="Reseller Actual: $nomkey\n"
 			 bot_retorno+="$LINE\n"
