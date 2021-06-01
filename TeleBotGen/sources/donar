@@ -3,13 +3,14 @@
 donar () {
 
 			 bot_retorno="$LINE\n"
-			 bot_retorno+="El proyecto BotGen requiere\nde fondos para poder continuar\n"
-			 bot_retorno+="Usted puede realizar una donacion\n"
-			 bot_retorno+="Paypal\n"
-			 bot_retorno+="PAGO BTC - CRIPTOMONEDA\n"
-			 bot_retorno+="O Bien Contactando a WHATSAPP\n DIRECTAMENTE\n"
+			 bot_retorno+="        ⚠️ TENDRAS ACCESO ILIMITADO ⚠️ \n          🚫 Sin TU RESELLER EN LA KEY 🚫"
+			 bot_retorno+=" 𝙴𝚜𝚝𝚎 𝙿𝚛𝚘𝚢𝚎𝚌𝚝𝚘, 𝚗𝚎𝚌𝚎𝚜𝚒𝚝𝚊 𝚊𝚢𝚞𝚍𝚊 𝚙𝚊𝚛𝚊 𝙴𝚟𝚘𝚕𝚞𝚌𝚒𝚘𝚗𝚊𝚛\n"
+			 bot_retorno+="          𝙎𝙞 𝙙𝙚𝙨𝙚𝙖𝙨 𝙍𝙚𝙖𝙡𝙞𝙯𝙖𝙧 𝙪𝙣𝙖 𝘿𝙤𝙣𝙖𝙘𝙞𝙤𝙣\n"
+			 bot_retorno+="                     𝙋𝙖𝙮𝙥𝙖𝙡\n"
+			 bot_retorno+="            PAGO BTC - CRIPTOMONEDA\n"
+			 bot_retorno+="       𝙾 𝚋𝚒𝚎𝚗 𝙰𝚍𝚚𝚞𝚒𝚛𝚒𝚎𝚗𝚍𝚘 𝚎𝚕 𝙶𝚎𝚗𝚎𝚛𝚊𝚍𝚘𝚛\n"
 			 bot_retorno+="$LINE\n"
-			 bot_retorno+="Desde ya muchas gracias\n"
+			 bot_retorno+=" Desde ya muchas gracias\n"
 			 bot_retorno+="$LINE\n"
 			 msj_donar
 }
