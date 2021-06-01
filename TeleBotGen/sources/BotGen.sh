@@ -33,7 +33,7 @@ keytxt="${CIDdir}/keys" && [[ ! -d ${keytxt} ]] && mkdir ${keytxt}
 [[ $(dpkg --get-selections|grep -w "jq"|head -1) ]] || apt-get install jq -y &>/dev/null
 [[ ! -e "/bin/ShellBot.sh" ]] && wget -O /bin/ShellBot.sh https://raw.githubusercontent.com/ChumoGH/VPSbot/main/ShellBot.sh &> /dev/null
 [[ -e /etc/texto-bot ]] && rm /etc/texto-bot
-LINE="••••••••••••••••••••••••••••••••••••••••••••••••••••"
+LINE=" ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••"
 
 # Importando API
 source ShellBot.sh
@@ -125,7 +125,7 @@ invalido_fun () {
 	[[ ! -z ${callback_query_message_chat_id[$id]} ]] && var=${callback_query_message_chat_id[$id]} || var=${message_chat_id[$id]}
 local bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
 	 bot_retorno+="$LINE\n"
-         bot_retorno+="Comando invalido DIJITA /ayuda Para Conocer los Pasos!\n O Contacta a $(cat < /etc/ADM-db/resell)"
+         bot_retorno+="𝙲𝚘𝚖𝚊𝚗𝚍𝚘 𝙸𝚗𝚟𝚊𝚕𝚒𝚍𝚘!! 𝚃𝚎𝚌𝚕𝚎𝚊 /𝚊𝚢𝚞𝚍𝚊 𝚙𝚊𝚛𝚊 𝙲𝚘𝚗𝚘𝚌𝚎𝚛 𝚕𝚘𝚜 𝙿𝚊𝚜𝚘𝚜! \n O Contacta a $(cat < /etc/ADM-db/resell) \n"
          bot_retorno+="$LINE\n"
 	     ShellBot.sendMessage --chat_id $var \
 							--text "<i>$(echo -e $bot_retorno)</i>" \
