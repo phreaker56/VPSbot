@@ -123,8 +123,9 @@ upfile_fun () {
 
 invalido_fun () {
 	[[ ! -z ${callback_query_message_chat_id[$id]} ]] && var=${callback_query_message_chat_id[$id]} || var=${message_chat_id[$id]}
-local bot_retorno="$LINE\n"
-         bot_retorno+="Comando invalido Contacte con @ChumoGH!\n"
+local bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
+	 bot_retorno+="$LINE\n"
+         bot_retorno+="Comando invalido DIJITA /ayuda Para Conocer los Pasos!\n O Contacta a $(cat < /etc/ADM-db/resell)"
          bot_retorno+="$LINE\n"
 	     ShellBot.sendMessage --chat_id $var \
 							--text "<i>$(echo -e $bot_retorno)</i>" \
@@ -134,7 +135,7 @@ local bot_retorno="$LINE\n"
 
 msj_fun () {
 	[[ ! -z ${callback_query_message_chat_id[$id]} ]] && var=${callback_query_message_chat_id[$id]} || var=${message_chat_id[$id]}
-	      ShellBot.sendMessage --chat_id $var \
+		      ShellBot.sendMessage --chat_id $var \
 							--text "<i>$(echo -e "$bot_retorno")</i>" \
 							--parse_mode html
 	return 0
