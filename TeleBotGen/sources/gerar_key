@@ -2,13 +2,13 @@
 # -*- ENCODING: UTF-8 -*-
 
 # verificacion primarias
-[[ -e /etc/newadm-instalacao ]] && BASICINST="$(cat /etc/newadm-instalacao)" || BASICINST="cabecalho menu_credito ferramentas limitera menu_inst PPub.py speedtest.py usercodes ferramentascodes limiterb menu-txt payloads ssl user-txt ferramentas-txt limiter.sh paysnd.sh trans verifica confdropbear PDirect.py v-local.log idioma_geral PGet.py pwd.pwd ultrahost idioma_menuinst menu optimizador POpen.py shadowsocks.sh fai2ban overtcp PPriv.py user"
+[[ -e /etc/newadm-instalacao ]] && BASICINST="$(cat /etc/newadm-instalacao)" || BASICINST="cabecalho menu_credito ferramentas limitera menu_inst PPub.py usercodes ferramentascodes limiterb menu-txt payloads ssl user-txt ferramentas-txt limiter.sh paysnd.sh trans verifica confdropbear PDirect.py v-local.log idioma_geral PGet.py pwd.pwd ultrahost idioma_menuinst menu optimizador POpen.py shadowsocks.sh fai2ban overtcp PPriv.py user"
 SCPT_DIR="/etc/SCRIPT"
 [[ ! -e ${SCPT_DIR} ]] && mkdir ${SCPT_DIR}
 INSTA_ARQUIVOS="ADMVPS.zip"
 DIR="/etc/http-shell"
 LIST="lista-arq"
-
+[[ -e /etc/menu_numito ]] && menumito="$(cat /etc/menu_numito)" || menumito="https://t.me/ChumoGH_bot"
 gerar_key () {
 #echo -e "$(cat < /etc/ADM-db/resell)" > ${SCPT_DIR}/menu_credito
 meu_ip_fun
@@ -17,7 +17,7 @@ valuekey+="$(echo $(($RANDOM*10))|head -c 5)"
 fun_list "$valuekey"
 keyfinal=$(ofus "$IP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
-bot_retorno+="✅ Key Generada Con Exito! el $(printf '%(%D-%H:%M:%S)T')   ✅\n"
+bot_retorno+="✅ Key Exitosa! $(printf '%(%D-%H:%M:%S)T') ✅\n ⚠️ 𝔸𝕌𝕋𝕆𝔻𝔼𝕊𝕋ℝ𝕌ℂℂ𝕀𝕆ℕ 𝔼ℕ 𝟚𝟜 ℍ𝕆ℝ𝔸𝕊 ⚠️"
 bot_retorno+="$LINE\n"
 bot_retorno+=" 💥 ${keyfinal} 💥\n"
 bot_retorno+="$LINE\n"
@@ -25,14 +25,11 @@ bot_retorno+=" 🛡️ Instalador Oficial 🛡️ \n"
 bot_retorno+="$LINE\n"
 bot_retorno+="apt update -y;apt upgrade -y;wget -q https://www.dropbox.com/s/0qj3edi5dibcrqd/instala.sh; chmod 777 instala.sh; ./instala.sh\n"
 bot_retorno+="$LINE\n"
-bot_retorno+=" 🧬 Soporte : Ubuntu 14.04 - 16.04 - 18.04 - 20.04\nVerificada, https://t.me/ChumoGH \n 🪦 Solicita tus Creditos 🛡️⚔️\n"
+bot_retorno+=" 🧬 Soporte : Ubuntu 14.04 - 16.04 - 18.04 - 20.04\nVerificada por, https://t.me/ChumoGH \n 🪦 Solicita Creditos de tu KEY 🛡️⚔️\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="Verificada tus Keys, https://t.me/ChumoGH Reseller : $(cat < /etc/ADM-db/resell)"
-bot_retorno+="$LINE\n"
-bot_retorno+="Esta key se autodestruira en 24hs\npasado este tiempo deve generar una nueva key.\n"
+bot_retorno+="Generada por: $menumito Reseller : $(cat < /etc/ADM-db/resell)\n"
 bot_retorno+="$LINE\n"
 msj_fun
-
 echo -e $bot_retorno >> ${keytxt}/key_${chatuser}.txt
 upfile_fun ${keytxt}/key_${chatuser}.txt
 rm ${keytxt}/key_${chatuser}.txt
