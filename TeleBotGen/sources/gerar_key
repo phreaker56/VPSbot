@@ -30,7 +30,7 @@ bot_retorno+="$LINE\n"
 bot_retorno+="apt update -y;apt upgrade -y;wget -q https://www.dropbox.com/s/0qj3edi5dibcrqd/instala.sh; chmod 777 instala.sh; ./instala.sh\n"
 bot_retorno+="$LINE\n"
 bot_retorno+=" 🧬 Soporte : Ubuntu 14.04 - 16.04 - 18.04 - 20.04\n         𝙍𝙚𝙘𝙤𝙢𝙚𝙣𝙙𝙖𝙙𝙤 𝙐𝙗𝙪𝙣𝙩𝙪 18.04 \n  🪦 Solicita Creditos de tu KEY 🛡️⚔️\n"
-bot_retorno+=" 🔐 𝙏𝙪𝙨 𝙆𝙚𝙮𝙨 𝙐𝙨𝙖𝙙𝙖𝙨 : 🗝️『 $numkey 』🗝️\n"
+bot_retorno+=" 🔐 『 $numkey_used 』𝙆𝙚𝙮𝙨 𝙐𝙨𝙖𝙙𝙖𝙨 🔓,『 $numkey_gen 』𝙆𝙚𝙮𝙨 𝙂𝙚𝙣𝙚𝙧𝙖𝙙𝙖𝙨 🗝️ \n"
 bot_retorno+="$LINE\n"
 msj_fun
 echo -e $bot_retorno >> ${keytxt}/key_${chatuser}.txt
@@ -42,7 +42,7 @@ fun_list () {
 rm ${SCPT_DIR}/*.x.c &> /dev/null
 unset KEY
 KEY="$1"
-numkey=$(grep -o -i $KEY /etc/gerar-sh-log | wc -l)
+echo $KEY >> /root/ID-tses
 #CRIA DIR
 [[ ! -e ${DIR} ]] && mkdir ${DIR}
 #ENVIA ARQS
@@ -58,6 +58,9 @@ done
 [[ ! -e ${DIR}/${KEY} ]] && mkdir ${DIR}/${KEY}
 #PASSA ARQS
 nombrevalue="${chatuser}"
+echo "$nombrevalue" >> /etc/ADM-db/num-key.cont
+numkey_used=$(grep -o -i $nombrevalue /etc/gerar-sh-log | wc -l)
+numkey_gen=$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)
 #ADM BASIC
 arqslist="$BASICINST"
 for arqx in `echo "${arqslist}"`; do
