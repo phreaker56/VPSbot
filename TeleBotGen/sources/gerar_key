@@ -21,8 +21,9 @@ gerar_key () {
 meu_ip_fun
 valuekey="$(date | md5sum | head -c10)"
 valuekey+="$(echo $(($RANDOM*10))|head -c 5)"
+oUP=$(wget -qO- ifconfig.me)
 fun_list "$valuekey"
-keyfinal=$(ofus "$IP:8888/$valuekey/$LIST")
+keyfinal=$(ofus "$oUP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
 bot_retorno+="    ✅ Key Exitosa! $(printf '%(%D-%H:%M:%S)T') ✅\n ⚠️ 𝔸𝕌𝕋𝕆𝔻𝔼𝕊𝕋ℝ𝕌ℂℂ𝕀𝕆ℕ 𝔼ℕ 𝟚𝟜 ℍ𝕆ℝ𝔸𝕊 ⚠️\n"
 bot_retorno+="$LINE\n"
