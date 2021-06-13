@@ -1,13 +1,12 @@
 #!/bin/bash
 menu_src () {
 #namcli=$(bash /etc/ADM-db/BotGen.sh | grep  message_from_first_name | grep message_from_first_name | grep -i message_from_first_name | awk {'print $4'})
-
-bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘 ${message_text[$usuario]} 𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
+#${message_text[$usuario]}
+bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  $message_from_first_name $message_from_last_name  𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
 	 if [[ $(echo $permited|grep "${chatuser}") = "" ]]; then
 		 if [[ $(cat ${CID}|grep "${chatuser}") = "" ]]; then
 		 	 bot_retorno+="$LINE\n"
-			 bot_retorno+="𝙃𝙤𝙡𝙖 ( ${message_text[$usuario]} ), 𝘽𝙞𝙚𝙣𝙫𝙚𝙣𝙞𝙙𝙤 𝙖𝙡 𝙈𝙚𝙣𝙪"
-			 bot_retorno+="$message_from_first_name"
+			 bot_retorno+="𝙃𝙤𝙡𝙖 (  $message_from_first_name $message_from_last_name  ), 𝘽𝙞𝙚𝙣𝙫𝙚𝙣𝙞𝙙𝙤 𝙖𝙡 𝙈𝙚𝙣𝙪"
 			 bot_retorno+="$LINE\n"
 			 bot_retorno+="  ⚠️ TENDRAS ACCESO LIMITADO ⚠️ \n  🚫 Sin TU RESELLER EN LA KEY 🚫"
 			 bot_retorno+="$LINE\n"
@@ -26,8 +25,7 @@ bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘 ${message_text[$usu
 			bot_retorno+="$LINE\n"
 			 bot_retorno+="  ⚠️ TENDRAS ACCESO ILIMITADO ⚠️ \n  🚫 Sin TU RESELLER EN LA KEY 🚫"
 			 bot_retorno+="$LINE\n"
-			 bot_retorno+="𝙃𝙤𝙡𝙖 【 ${message_text[$usuario]} 】, 𝘽𝙞𝙚𝙣𝙫𝙚𝙣𝙞𝙙𝙤 𝙖𝙡 𝙈𝙚𝙣𝙪"
-			  bot_retorno+="$message_from_first_name"
+			 bot_retorno+="𝙃𝙤𝙡𝙖 【 $message_from_first_name $message_from_last_name 】, 𝘽𝙞𝙚𝙣𝙫𝙚𝙣𝙞𝙙𝙤 𝙖𝙡 𝙈𝙚𝙣𝙪"
 			 bot_retorno+="$LINE\n"
 			 bot_retorno+="Reseller Actual: $nomkey\n"
 			 bot_retorno+="$LINE\n"
