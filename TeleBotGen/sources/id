@@ -28,14 +28,15 @@ addID_reply () {
           bot_retorno+="$LINE\n"
           bot_retorno+="New ID: ${message_text[$id]}\n"
           bot_retorno+="$LINE"
-          bot_retorno+="$LINE"
+
           bot_retor="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
           bot_retor+="𝙃𝙤𝙡𝙖 ( $name ), 𝘽𝙞𝙚𝙣𝙫𝙚𝙣𝙞𝙙𝙤 𝙖𝙡 𝙈𝙚𝙣𝙪"
           bot_retor+="El Administrador $(cat < /etc/ADM-db/resell) te autoriso\n"
           bot_retor+="Para GENERAR Key's usar el comando /keygen\n"
           bot_retor+="Para MENU Digita el comando /menu\n"
           bot_retor+="Para actualizar el menu de comandos\n"
-          bot_retor+="Recuerda adquirir creditos\n"
+          bot_retor+="$LINE"
+          bot_retor+="Recuerda adquirir creditos, o Realizar tu donativo Voluntario  \n Paypal : chumogh@gmail.com\n"
           bot_retor+="Si tienes inconvenientes con el Bot |n Contactame : https://wa.me/593987072611\n"
           bot_retor+="$LINE\n"
       msj_fun
