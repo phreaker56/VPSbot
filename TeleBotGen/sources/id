@@ -1,5 +1,7 @@
 #!/bin/bash
 
+idirect="/etc/idir" && [[ ! -d $idirect ]] && mkdir $idirect
+
 myid_src () {
 bot_retorno="====================\n"
           bot_retorno+="SU ID: ${chatuser}\n"
@@ -19,9 +21,11 @@ upfile_src
 }
 
 addID_reply () {
-      [[ $(cat ${CID}|grep "${message_text[$id]}") = "" ]] && {
+      [[ $(cat ${CID}|grep "${message_text[$id]}" ) = "" ]] && {
+        #echo "/${message_text[$id]} | $(date '+%d-%m-%Y' -d " +$dias days")" >> $idirect/idtegm
+        #cat $idirect/idtegm | awk '{print $1}' >> ${CID}
         echo "/${message_text[$id]}" >> ${CID}
-          bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  $message_from_first_name $message_from_last_name  𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
+          bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  $message_from_first_name  𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
           bot_retorno+="✅ *ID agregado * ✅\n"
           bot_retorno+="$LINE\n"
           bot_retorno+="$(< ${CID})\n"
@@ -29,15 +33,15 @@ addID_reply () {
           bot_retorno+="New ID: ${message_text[$id]}\n"
           bot_retorno+="$LINE"
 
-          bot_retor="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  $message_from_first_name $message_from_last_name  𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
-          bot_retor+="𝙃𝙤𝙡𝙖 (  $message_from_first_name $message_from_last_name  ), 𝘽𝙞𝙚𝙣𝙫𝙚𝙣𝙞𝙙𝙤 𝙖𝙡 𝙈𝙚𝙣𝙪"
-          bot_retor+="El Administrador $(cat < /etc/ADM-db/resell) te autoriso\n"
+          bot_retor="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  Nuevamente 𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
+          bot_retor+="𝙃𝙤𝙡𝙖 『 $message_from_first_name $message_from_last_name 』\n"
+          bot_retor+="El Administrador $(cat < /etc/ADM-db/resell) te autorizo\n"
           bot_retor+="Para GENERAR Key's usar el comando /keygen\n"
           bot_retor+="Para MENU Digita el comando /menu\n"
           bot_retor+="Para actualizar el menu de comandos\n"
           bot_retor+="$LINE"
           bot_retor+="Recuerda adquirir creditos, o Realizar tu donativo Voluntario  \n Paypal : chumogh@gmail.com\n"
-          bot_retor+="Si tienes inconvenientes con el Bot |n Contactame : https://wa.me/593987072611\n"
+          bot_retor+="Si tienes inconvenientes con el Bot \n Contactame : https://wa.me/593987072611\n"
           bot_retor+="$LINE\n"
       msj_fun
       msj_add ${message_text[$id]}
