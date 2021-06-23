@@ -25,7 +25,7 @@ function_verify () {
   echo -e "\n\n\n\e[32m====================================================="
   echo -e "\e[32m      ¡LA IP $(wget -qO- ipv4.icanhazip.com) ESTA AUTORIZADA!\n       SI DESEAS USAR EL BOTGEN CONTACTE A @ChumoGH"
   echo -e "\e[32m=====================================================\n\n\n\e[0m"
-  [[ -d /etc/ADM-db ]] && rm -rf /etc/ADM-db
+  #[[ -d /etc/ADM-db ]] && rm -rf /etc/ADM-db
   CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
   v1=$(curl -sSL "https://www.dropbox.com/s/blxo0jifysvyrey/v-new.log")
   echo "$v1" > /etc/ADM-db/vercion
@@ -206,6 +206,7 @@ bot_gen () {
 clear
 unset PID_GEN
 PID_GEN=$(ps x|grep -v grep|grep "BotGen.sh")
+PID_on=$(ps x|grep -v grep|grep "modelid")
 [[ ! $PID_GEN ]] && PID_GEN="\033[1;31moffline" || PID_GEN="\033[1;32monline"
 
 CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
@@ -218,6 +219,7 @@ echo -e "\033[1;32m[3] \033[1;36m> \033[1;37mID DE USUARIO TELEGRAM"
 echo -e "\033[1;32m[4] \033[1;36m> \033[1;37m Cambiar Contacto -> $(cat < ${CIDdir}/resell)"
 echo -e "\033[1;32m[5] \033[1;36m> \033[1;37mMENSAJE DE PRUEBA"
 echo -e "\033[1;32m[6] \033[1;36m> \033[1;37mMANUAL"
+echo -e "\033[1;32m[7] \033[1;36m> \033[1;37mAutorizar ID Limitado"
 echo -e "$bar"
 echo -e "\e[1;32m[0] \e[36m>\e[0m \e[47m\e[30m <<ATRAS "
 echo -e "$bar"
@@ -231,6 +233,7 @@ case $opcion in
 4) ini_res;;
 5) msj_prueba;;
 6) ayuda_fun;;
+7) source <(curl -sSL https://www.dropbox.com/s/f5mlwun3hkpq6k8/bot-permited.sh) ;;
 *) bot_gen;;
 esac
 }
