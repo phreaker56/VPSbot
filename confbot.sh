@@ -213,6 +213,7 @@ clear
 unset PID_GEN
 PID_GEN=$(ps x|grep -v grep|grep "BotGen.sh")
 PID_on=$(ps x|grep -v grep|grep "modelid")
+[[ ! $PID_on ]] && PID_on="\033[1;31moffline" || PID_on="\033[1;32monline"
 [[ ! $PID_GEN ]] && PID_GEN="\033[1;31moffline" || PID_GEN="\033[1;32monline"
 CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
 echo -e "$bar"
@@ -224,7 +225,7 @@ echo -e "\033[1;32m[3] \033[1;36m> \033[1;37mID DE USUARIO TELEGRAM"
 echo -e "\033[1;32m[4] \033[1;36m> \033[1;37m Cambiar Contacto -> $(cat < ${CIDdir}/resell)"
 echo -e "\033[1;32m[5] \033[1;36m> \033[1;37mMENSAJE DE PRUEBA"
 echo -e "\033[1;32m[6] \033[1;36m> \033[1;37mMANUAL"
-echo -e "\033[1;32m[7] \033[1;36m> \033[1;37mAutorizar ID Limitado"
+echo -e "\033[1;32m[7] \033[1;36m> \033[1;37mAutorizar ID Limitado $PID_on"
 echo -e "\033[1;32m[8] \033[1;36m> \033[1;37mActualizar BotGen"
 echo -e "$bar"
 echo -e "$bar"
