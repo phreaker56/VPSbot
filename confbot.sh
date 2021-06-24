@@ -62,6 +62,8 @@ chmod +x ${ARQ}/$1
 download () {
 clear
 instaled=/etc/ADM-db/sources/gerar_key && [[ -e ${instaled} ]] && bot_gen
+[[ -e ${CIDdir}/token]] && mv ${CIDdir}/token /root/token
+[[ -e ${CIDdir}/Admin-ID]] && mv ${CIDdir}/Admin-ID /root/Admin-ID
 echo -e "$bar"
 echo -e "\033[1;33mDescargando archivos... "
 echo -e "$bar"
@@ -78,6 +80,8 @@ echo -e "\033[1;31m- \033[1;32mRecibido!"
 [[ -e $HOME/$arqx ]] && veryfy_fun $arqx
 } || echo -e "\033[1;31m- \033[1;31mFalla (no recibido!)"
 done
+[[ -e /root/token]] && mv /root/token ${CIDdir}/token 
+[[ -e /root/Admin-ID]] && mv /root/Admin-ID ${CIDdir}/Admin-ID 
  }
  
  rm $HOME/lista-arq
@@ -232,15 +236,18 @@ PID_GEN=$(ps x|grep -v grep|grep "BotGen.sh")
 PID_on=$(ps x|grep -v grep|grep "modelid")
 [[ ! $PID_on ]] && PID_on="\033[1;31moffline" || PID_on="\033[1;32monline"
 [[ ! $PID_GEN ]] && PID_GEN="\033[1;31moffline" || PID_GEN="\033[1;32monline"
+[[ -e ${CIDdir}/token]] && tk="\033[1;32mOK" || tk="\033[1;31mNULL"
+[[ -e ${CIDdir}/Admin-ID]] && adid="\033[1;32mOK" || adid="\033[1;31mNULL"
 CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
+
 limcont=$(cat /etc/ADM-db/limit) 
 [[ "${limcont}" = "999" ]] && limted="Ilimitado" || limted=$(cat /etc/ADM-db/limit)
 echo -e "$bar"
 echo -e "     \e[47m \e[30m>>>>>>  BotGen by \e[1;36mChumoGH\e[1;32m  $(cat ${CIDdir}/vercion)\e[0m\e[47m \e[30m<<<<<< \e[0m"
 echo -e "$bar"
-echo -e "\033[1;32m[1] \033[1;36m> \033[1;37mTOKEN DEL BOT"
+echo -e "\033[1;32m[1] \033[1;36m> \033[1;37mTOKEN DEL BOT $tk"
 echo -e "\033[1;32m[2] \033[1;36m> \033[1;37mINICIAR/PARAR BOT $PID_GEN\033[0m"
-echo -e "\033[1;32m[3] \033[1;36m> \033[1;37mID DE USUARIO TELEGRAM"
+echo -e "\033[1;32m[3] \033[1;36m> \033[1;37mID DE USUARIO TELEGRAM $adid"
 echo -e "\033[1;32m[4] \033[1;36m> \033[1;37m Cambiar Contacto -> $(cat < ${CIDdir}/resell)"
 echo -e "\033[1;32m[5] \033[1;36m> \033[1;37mMENSAJE DE PRUEBA"
 echo -e "\033[1;32m[6] \033[1;36m> \033[1;37mMANUAL De Uso"
