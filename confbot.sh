@@ -187,6 +187,7 @@ bot_conf () {
 check_ip
 function_verify
 instaled=/etc/ADM-db/sources && [[ ! -d ${instaled} ]] && download
+read -p "Pause"
 bot_gen
 }
 
