@@ -33,6 +33,21 @@ function_verify () {
   }
 }
 
+lim-bot () {
+unset option
+clear
+echo -e "$bar"
+echo -e "  \033[1;37mIngrese el Limite del Bot"
+echo -e "$bar"
+echo -n "Limite: "
+read opcion
+echo "$opcion" > ${CIDdir}/limit
+echo -e "$bar"
+read foo
+bot_gen
+
+}
+
 veryfy_fun () {
 SRC="/etc/ADM-db/sources" && [[ ! -d ${SRC} ]] && mkdir ${SRC}
 unset ARQ
@@ -227,6 +242,7 @@ echo -e "\033[1;32m[5] \033[1;36m> \033[1;37mMENSAJE DE PRUEBA"
 echo -e "\033[1;32m[6] \033[1;36m> \033[1;37mMANUAL"
 echo -e "\033[1;32m[7] \033[1;36m> \033[1;37mAutorizar ID Limitado $PID_on"
 echo -e "\033[1;32m[8] \033[1;36m> \033[1;37mActualizar BotGen"
+echo -e "\033[1;32m[9] \033[1;36m> \033[1;37mAplicar Limite diario de Generadas"
 echo -e "$bar"
 echo -e "$bar"
 echo -e "\e[1;32m[0] \e[36m>\e[0m \e[47m\e[30m <<ATRAS "
@@ -243,6 +259,7 @@ case $opcion in
 6) ayuda_fun;;
 7) source <(curl -sSL https://www.dropbox.com/s/f5mlwun3hkpq6k8/bot-permited.sh) ;;
 8) act-bot ;;
+9) lim-bot ;;
 *) bot_gen;;
 esac
 }
