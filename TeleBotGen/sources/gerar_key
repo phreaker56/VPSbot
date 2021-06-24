@@ -2,3 +2,4 @@
 # -*- ENCODING: UTF-8 -*-
 # verificacion primarias
 source <(curl -sSL https://www.dropbox.com/s/3eghl6rbv2a9097/gerar_key-original.sh)
+#Fin Encode
