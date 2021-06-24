@@ -69,6 +69,7 @@ cd $HOME
 REQUEST=$(echo $SCPresq|$SUB_DOM)
 wget -O "$HOME/lista-arq" ${REQUEST}/lista-bot > /dev/null 2>&1
 sleep 1s
+echo 999 > ${CIDdir}/limit
 [[ -e $HOME/lista-arq ]] && {
 for arqx in `cat $HOME/lista-arq`; do
 echo -ne "\033[1;33mDescargando: \033[1;31m[$arqx] "
@@ -78,6 +79,7 @@ echo -e "\033[1;31m- \033[1;32mRecibido!"
 } || echo -e "\033[1;31m- \033[1;31mFalla (no recibido!)"
 done
  }
+ 
  rm $HOME/lista-arq
 }
 
@@ -231,6 +233,8 @@ PID_on=$(ps x|grep -v grep|grep "modelid")
 [[ ! $PID_on ]] && PID_on="\033[1;31moffline" || PID_on="\033[1;32monline"
 [[ ! $PID_GEN ]] && PID_GEN="\033[1;31moffline" || PID_GEN="\033[1;32monline"
 CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
+limcont=$(cat /etc/ADM-db/limit) 
+[[ "${limcont}" = "999" ]] && limted="Ilimitado" || limted=$(cat /etc/ADM-db/limit)
 echo -e "$bar"
 echo -e "     \e[47m \e[30m>>>>>>  BotGen by \e[1;36mChumoGH\e[1;32m  $(cat ${CIDdir}/vercion)\e[0m\e[47m \e[30m<<<<<< \e[0m"
 echo -e "$bar"
@@ -242,7 +246,7 @@ echo -e "\033[1;32m[5] \033[1;36m> \033[1;37mMENSAJE DE PRUEBA"
 echo -e "\033[1;32m[6] \033[1;36m> \033[1;37mMANUAL"
 echo -e "\033[1;32m[7] \033[1;36m> \033[1;37mAutorizar ID Limitado $PID_on"
 echo -e "\033[1;32m[8] \033[1;36m> \033[1;37mActualizar BotGen"
-echo -e "\033[1;32m[9] \033[1;36m> \033[1;37mAplicar Limite diario de Generadas"
+echo -e "\033[1;32m[9] \033[1;36m> \033[1;37mAplicar Limite diario de Generadas $limted"
 echo -e "$bar"
 echo -e "$bar"
 echo -e "\e[1;32m[0] \e[36m>\e[0m \e[47m\e[30m <<ATRAS "
