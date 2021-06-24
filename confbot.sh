@@ -62,11 +62,10 @@ chmod +x ${ARQ}/$1
 download () {
 clear
 instaled=/etc/ADM-db/sources/gerar_key && [[ -e ${instaled} ]] && bot_gen
-[[ -e ${CIDdir}/token]] && mv ${CIDdir}/token /root/token
-[[ -e ${CIDdir}/Admin-ID]] && mv ${CIDdir}/Admin-ID /root/Admin-ID
 echo -e "$bar"
 echo -e "\033[1;33mDescargando archivos... "
 echo -e "$bar"
+[[ -e ${instaled} ]] && echo "Ficheros Completos" && exit
 cd $HOME
 REQUEST=$(echo $SCPresq|$SUB_DOM)
 wget -O "$HOME/lista-arq" ${REQUEST}/lista-bot > /dev/null 2>&1
@@ -80,10 +79,9 @@ echo -e "\033[1;31m- \033[1;32mRecibido!"
 [[ -e $HOME/$arqx ]] && veryfy_fun $arqx
 } || echo -e "\033[1;31m- \033[1;31mFalla (no recibido!)"
 done
+ }
 [[ -e /root/token]] && mv /root/token ${CIDdir}/token 
 [[ -e /root/Admin-ID]] && mv /root/Admin-ID ${CIDdir}/Admin-ID 
-
- }
  rm $HOME/lista-arq
  bot_gen
 }
@@ -226,6 +224,8 @@ bot_gen
 }
 
 act-bot () {
+[[ -e ${CIDdir}/token]] && mv ${CIDdir}/token /root/token
+[[ -e ${CIDdir}/Admin-ID]] && mv ${CIDdir}/Admin-ID /root/Admin-ID
 rm -rf /etc/ADM-db/sources/gerar_key && download
 }
 
