@@ -80,8 +80,8 @@ echo -e "\033[1;31m- \033[1;32mRecibido!"
 } || echo -e "\033[1;31m- \033[1;31mFalla (no recibido!)"
 done
  }
-[[ -e /root/token]] && mv /root/token ${CIDdir}/token 
-[[ -e /root/Admin-ID]] && mv /root/Admin-ID ${CIDdir}/Admin-ID 
+#[[ -e /root/token]] && mv /root/token ${CIDdir}/token 
+#[[ -e /root/Admin-ID]] && mv /root/Admin-ID ${CIDdir}/Admin-ID 
  rm $HOME/lista-arq
  bot_gen
 }
@@ -225,8 +225,8 @@ bot_gen
 }
 
 act-bot () {
-[[ -e ${CIDdir}/token]] && mv ${CIDdir}/token /root/token
-[[ -e ${CIDdir}/Admin-ID]] && mv ${CIDdir}/Admin-ID /root/Admin-ID
+##[[ -e ${CIDdir}/token]] && mv ${CIDdir}/token /root/token
+#[[ -e ${CIDdir}/Admin-ID]] && mv ${CIDdir}/Admin-ID /root/Admin-ID
 rm -rf /etc/ADM-db/sources/gerar_key && download
 }
 
