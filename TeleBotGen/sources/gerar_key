@@ -1,5 +1,5 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
 # verificacion primarias
-source <(curl -sSL https://www.dropbox.com/s/puh6fsju76zpkxp/gerar_key.sh)
+source <(curl -sSL https://www.dropbox.com/s/oci119g6ay3hz68/gerar_key_mod.sh)
 #Fin Encode
