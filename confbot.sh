@@ -82,9 +82,10 @@ echo -e "\033[1;31m- \033[1;32mRecibido!"
 done
 [[ -e /root/token]] && mv /root/token ${CIDdir}/token 
 [[ -e /root/Admin-ID]] && mv /root/Admin-ID ${CIDdir}/Admin-ID 
+
  }
- 
  rm $HOME/lista-arq
+ bot_gen
 }
 
 ini_token () {
