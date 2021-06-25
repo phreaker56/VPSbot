@@ -45,7 +45,6 @@ echo "$opcion" > ${CIDdir}/limit
 echo -e "$bar"
 read foo
 bot_gen
-
 }
 
 veryfy_fun () {
@@ -187,8 +186,6 @@ bot_conf () {
 check_ip
 function_verify
 instaled=/etc/ADM-db/sources && [[ ! -d ${instaled} ]] && download
-read -p "Pause"
-bot_gen
 }
 
 msj_prueba () {
@@ -234,14 +231,13 @@ rm -rf /etc/ADM-db/sources/gerar_key && download
 bot_gen () {
 clear
 unset PID_GEN
+CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
 PID_GEN=$(ps x|grep -v grep|grep "BotGen.sh")
 PID_on=$(ps x|grep -v grep|grep "modelid")
 [[ ! $PID_on ]] && PID_on="\033[1;31moffline" || PID_on="\033[1;32monline"
 [[ ! $PID_GEN ]] && PID_GEN="\033[1;31moffline" || PID_GEN="\033[1;32monline"
 [[ -e ${CIDdir}/token]] && tk="\033[1;32mOK" || tk="\033[1;31mNULL"
 [[ -e ${CIDdir}/Admin-ID]] && adid="\033[1;32mOK" || adid="\033[1;31mNULL"
-CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
-
 limcont=$(cat /etc/ADM-db/limit) 
 [[ "${limcont}" = "999" ]] && limted="Ilimitado" || limted=$(cat /etc/ADM-db/limit)
 echo -e "$bar"
