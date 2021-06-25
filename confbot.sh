@@ -64,7 +64,6 @@ instaled=/etc/ADM-db/sources/gerar_key && [[ -e ${instaled} ]] && bot_gen
 echo -e "$bar"
 echo -e "\033[1;33mDescargando archivos... "
 echo -e "$bar"
-[[ -e ${instaled} ]] && echo "Ficheros Completos" && exit
 cd $HOME
 REQUEST=$(echo $SCPresq|$SUB_DOM)
 wget -O "$HOME/lista-arq" ${REQUEST}/lista-bot > /dev/null 2>&1
@@ -79,8 +78,8 @@ echo -e "\033[1;31m- \033[1;32mRecibido!"
 } || echo -e "\033[1;31m- \033[1;31mFalla (no recibido!)"
 done
  }
-[[ -e /root/token]] && mv /root/token /etc/ADM-db/token 
-[[ -e /root/Admin-ID]] && mv /root/Admin-ID /etc/ADM-db/Admin-ID 
+#[[ -e /root/token]] && mv /root/token /etc/ADM-db/token 
+#[[ -e /root/Admin-ID]] && mv /root/Admin-ID /etc/ADM-db/Admin-ID 
  rm $HOME/lista-arq
  bot_gen
 }
