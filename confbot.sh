@@ -80,7 +80,9 @@ done
  }
 [[ -e /root/token ]] && mv /root/token /etc/ADM-db/token 
 [[ -e /root/Admin-ID ]] && mv /root/Admin-ID /etc/ADM-db/Admin-ID 
+echo "Restaurando Token y ADMINISTRADOR"
  rm $HOME/lista-arq
+ read -p "Presiona Enter para continuar"
  bot_gen
 }
 
@@ -221,6 +223,7 @@ bot_gen
 }
 
 act-bot () {
+echo "Respaldando TOKEN y ADMINISTRADOR" 
 [[ -e /etc/ADM-db/token ]] && mv /etc/ADM-db/token /root/token
 [[ -e /etc/ADM-db/Admin-ID ]] && mv /etc/ADM-db/Admin-ID /root/Admin-ID
 rm -rf /etc/ADM-db/sources/gerar_key && download
