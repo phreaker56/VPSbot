@@ -78,8 +78,8 @@ echo -e "\033[1;31m- \033[1;32mRecibido!"
 } || echo -e "\033[1;31m- \033[1;31mFalla (no recibido!)"
 done
  }
-#[[ -e /root/token]] && mv /root/token /etc/ADM-db/token 
-#[[ -e /root/Admin-ID]] && mv /root/Admin-ID /etc/ADM-db/Admin-ID 
+[[ -e /root/token ]] && mv /root/token /etc/ADM-db/token 
+[[ -e /root/Admin-ID ]] && mv /root/Admin-ID /etc/ADM-db/Admin-ID 
  rm $HOME/lista-arq
  bot_gen
 }
@@ -221,8 +221,8 @@ bot_gen
 }
 
 act-bot () {
-[[ -e /etc/ADM-db/token]] && mv /etc/ADM-db/token /root/token
-[[ -e /etc/ADM-db/Admin-ID]] && mv /etc/ADM-db/Admin-ID /root/Admin-ID
+[[ -e /etc/ADM-db/token ]] && mv /etc/ADM-db/token /root/token
+[[ -e /etc/ADM-db/Admin-ID ]] && mv /etc/ADM-db/Admin-ID /root/Admin-ID
 rm -rf /etc/ADM-db/sources/gerar_key && download
 }
 
@@ -235,8 +235,8 @@ PID_GEN=$(ps x|grep -v grep|grep "BotGen.sh")
 PID_on=$(ps x|grep -v grep|grep "modelid")
 [[ ! $PID_on ]] && PID_on="\033[1;31mOFF" || PID_on="\033[1;32mON"
 [[ ! $PID_GEN ]] && PID_GEN="\033[1;31mOFF" || PID_GEN="\033[1;32mON"
-[[ -e ${CIDdir}/token]] && tk="\033[1;32mOK" || tk="\033[1;31mNULL"
-[[ -e ${CIDdir}/Admin-ID]] && adid="\033[1;32mOK" || adid="\033[1;31mNULL"
+[[ -e ${CIDdir}/token ]] && tk="\033[1;32mOK" || tk="\033[1;31mNULL"
+[[ -e ${CIDdir}/Admin-ID ]] && adid="\033[1;32mOK" || adid="\033[1;31mNULL"
 limcont=$(cat /etc/ADM-db/limit) 
 [[ "${limcont}" = "999" ]] && limted="Ilimitado" || limted=$(cat /etc/ADM-db/limit)
 echo -e "$bar"
