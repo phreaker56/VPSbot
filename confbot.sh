@@ -60,7 +60,6 @@ chmod +x ${ARQ}/$1
 
 download () {
 clear
-instaled=/etc/ADM-db/sources/gerar_key && [[ -e ${instaled} ]] && bot_gen
 echo -e "$bar"
 echo -e "\033[1;33mDescargando archivos... "
 echo -e "$bar"
@@ -184,6 +183,8 @@ bot_gen
 }
 
 bot_conf () {
+[[ -e /etc/ADM-db/token ]] && mv /etc/ADM-db/token /root/token
+[[ -e /etc/ADM-db/Admin-ID ]] && mv /etc/ADM-db/Admin-ID /root/Admin-ID
 check_ip
 function_verify
 instaled=/etc/ADM-db/sources && [[ ! -d ${instaled} ]] && download
