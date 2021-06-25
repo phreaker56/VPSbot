@@ -25,7 +25,7 @@ oUP=$(wget -qO- ifconfig.me)
 fun_list "$valuekey"
 keyfinal=$(ofus "$oUP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
-bot_retorno+=" Usuario $message_from_first_name $message_from_last_name Aplicado ✅\n ⚠️ 𝔸𝕌𝕋𝕆𝔻𝔼𝕊𝕋ℝ𝕌ℂℂ𝕀𝕆ℕ 𝔼ℕ 𝟚𝟜 ℍ𝕆ℝ𝔸𝕊 ⚠️\n"
+bot_retorno+=" Nombre : $message_from_first_name $message_from_last_name Limite Aplicado ✅\n ⚠️ 𝔸𝕌𝕋𝕆𝔻𝔼𝕊𝕋ℝ𝕌ℂℂ𝕀𝕆ℕ 𝔼ℕ 𝟚𝟜 ℍ𝕆ℝ𝔸𝕊 ⚠️\n"
 bot_retorno+="$LINE\n"
 bot_retorno+="  ⚠️ 𝚃𝙴𝙽𝙳𝚁𝙰𝚂 𝙰𝙲𝙲𝙴𝚂𝙾 𝙻𝙸𝙼𝙸𝚃𝙰𝙳𝙾 ⚠️ \n   🚫 Con TU RESELLER EN LA KEY 🚫\n"
 bot_retorno+=" 🛡️ 𝚁𝙴𝚂𝙴𝙻𝙻𝙴𝚁 𝙰𝚌𝚝𝚞𝚊𝚕 🛡️ : $nomkey\n"
