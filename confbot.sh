@@ -79,8 +79,8 @@ echo -e "\033[1;31m- \033[1;32mRecibido!"
 } || echo -e "\033[1;31m- \033[1;31mFalla (no recibido!)"
 done
  }
-#[[ -e /root/token]] && mv /root/token ${CIDdir}/token 
-#[[ -e /root/Admin-ID]] && mv /root/Admin-ID ${CIDdir}/Admin-ID 
+[[ -e /root/token]] && mv /root/token /etc/ADM-db/token 
+[[ -e /root/Admin-ID]] && mv /root/Admin-ID /etc/ADM-db/Admin-ID 
  rm $HOME/lista-arq
  bot_gen
 }
@@ -222,8 +222,8 @@ bot_gen
 }
 
 act-bot () {
-##[[ -e ${CIDdir}/token]] && mv ${CIDdir}/token /root/token
-#[[ -e ${CIDdir}/Admin-ID]] && mv ${CIDdir}/Admin-ID /root/Admin-ID
+[[ -e /etc/ADM-db/token]] && mv /etc/ADM-db/token /root/token
+[[ -e /etc/ADM-db/Admin-ID]] && mv /etc/ADM-db/Admin-ID /root/Admin-ID
 rm -rf /etc/ADM-db/sources/gerar_key && download
 }
 
@@ -234,8 +234,8 @@ unset PID_GEN
 CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
 PID_GEN=$(ps x|grep -v grep|grep "BotGen.sh")
 PID_on=$(ps x|grep -v grep|grep "modelid")
-[[ ! $PID_on ]] && PID_on="\033[1;31moffline" || PID_on="\033[1;32monline"
-[[ ! $PID_GEN ]] && PID_GEN="\033[1;31moffline" || PID_GEN="\033[1;32monline"
+[[ ! $PID_on ]] && PID_on="\033[1;31mOFF" || PID_on="\033[1;32mON"
+[[ ! $PID_GEN ]] && PID_GEN="\033[1;31mOFF" || PID_GEN="\033[1;32mON"
 [[ -e ${CIDdir}/token]] && tk="\033[1;32mOK" || tk="\033[1;31mNULL"
 [[ -e ${CIDdir}/Admin-ID]] && adid="\033[1;32mOK" || adid="\033[1;31mNULL"
 limcont=$(cat /etc/ADM-db/limit) 
@@ -251,7 +251,7 @@ echo -e "\033[1;32m[5] \033[1;36m> \033[1;37mMENSAJE DE PRUEBA"
 echo -e "\033[1;32m[6] \033[1;36m> \033[1;37mMANUAL De Uso"
 echo -e "\033[1;32m[7] \033[1;36m> \033[1;37mAutorizar ID Limitado $PID_on"
 echo -e "\033[1;32m[8] \033[1;36m> \033[1;37mActualizar BotGen"
-echo -e "\033[1;32m[9] \033[1;36m> \033[1;37mAplicar Limite diario de Generadas $limted"
+echo -e "\033[1;32m[9] \033[1;36m> \033[1;37mAplicar Limite diario de Generadas \033[1;32m$limted"
 echo -e "$bar"
 echo -e "$bar"
 echo -e "\e[1;32m[0] \e[36m>\e[0m \e[47m\e[30m <<ATRAS "
