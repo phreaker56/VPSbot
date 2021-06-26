@@ -7,7 +7,7 @@ MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1
 MIP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
 }
-
+unset nomkey menumito
 [[ -e /etc/newadm-instalacao ]] && BASICINST="$(cat /etc/newadm-instalacao)" || BASICINST="cabecalho menu_credito ferramentas limitera menu_inst PPub.py usercodes ferramentascodes limiterb menu-txt payloads ssl user-txt ferramentas-txt limiter.sh paysnd.sh trans verifica confdropbear PDirect.py v-local.log idioma_geral PGet.py pwd.pwd ultrahost idioma_menuinst menu optimizador POpen.py shadowsocks.sh fai2ban overtcp PPriv.py user"
 SCPT_DIR="/etc/SCRIPT"
 [[ ! -e ${SCPT_DIR} ]] && mkdir ${SCPT_DIR}
@@ -25,10 +25,10 @@ oUP=$(wget -qO- ifconfig.me)
 fun_list "$valuekey"
 keyfinal=$(ofus "$oUP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
-bot_retorno+=" Nombre : $message_from_first_name $message_from_last_name Limite Aplicado ✅\n ⚠️ 𝔸𝕌𝕋𝕆𝔻𝔼𝕊𝕋ℝ𝕌ℂℂ𝕀𝕆ℕ 𝔼ℕ 𝟚𝟜 ℍ𝕆ℝ𝔸𝕊 ⚠️\n"
+bot_retorno+=" Nombre : $message_from_first_name $message_from_last_name Limite Aplicado ✅\n ⚠️   𝔸𝕌𝕋𝕆𝔻𝔼𝕊𝕋ℝ𝕌ℂℂ𝕀𝕆ℕ 𝔼ℕ 𝟚𝟜 ℍ𝕆ℝ𝔸𝕊  ⚠️\n"
 bot_retorno+="$LINE\n"
 bot_retorno+="  ⚠️ 𝚃𝙴𝙽𝙳𝚁𝙰𝚂 𝙰𝙲𝙲𝙴𝚂𝙾 𝙻𝙸𝙼𝙸𝚃𝙰𝙳𝙾 ⚠️ \n   🚫 Con TU RESELLER EN LA KEY 🚫\n"
-bot_retorno+=" 🛡️ 𝚁𝙴𝚂𝙴𝙻𝙻𝙴𝚁 𝙰𝚌𝚝𝚞𝚊𝚕 🛡️ : $nomkey\n"
+bot_retorno+=" 🛡️ 𝚁𝙴𝚂𝙴𝙻𝙻𝙴𝚁 𝙰𝚌𝚝𝚞𝚊𝚕 🛡️ : $message_from_first_name $message_from_last_name \n"
 bot_retorno+="$LINE\n"
 bot_retorno+=" 💥 ${keyfinal} 💥\n"
 bot_retorno+="$LINE\n"
