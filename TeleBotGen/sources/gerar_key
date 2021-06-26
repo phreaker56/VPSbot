@@ -17,11 +17,6 @@ LIST="lista-arq"
 [[ -e /etc/menu_ito ]] && nomkey="$(cat /etc/menu_ito)" || nomkey="$(curl -sSL "https://www.dropbox.com/s/z38hj1mz3q9krso/menu_credito")"
 [[ -e /etc/menu_numito ]] && menumito="$(cat /etc/menu_numito)" || menumito="https://t.me/ChumoGH_bot"
 gerar_key () {
-nome-us=$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)
-con-limit=$(cat < /etc/ADM-db/limit)
-#SENTENCIA DE VERIFICACION DE LIMITE
-[[ ${nome-us} <= ${con-limit} ]] && {
-#INICIO DE SI ES MENOR
 #echo -e "$(cat < /etc/ADM-db/resell)" > ${SCPT_DIR}/menu_credito
 meu_ip_fun
 valuekey="$(date | md5sum | head -c10)"
@@ -50,19 +45,6 @@ echo -e $bot_retorno >> ${keytxt}/key_${chatuser}.txt
 upfile_fun ${keytxt}/key_${chatuser}.txt
 rm ${keytxt}/key_${chatuser}.txt
 #echo -e '匚 卄 ㄩ 爪 ㄖ Ꮆ 卄' > ${SCPT_DIR}/menu_credito
-
-} || { 
-local bot_retorno="$LINE\n"
-bot_retorno+="  ✘ $message_from_first_name $message_from_last_name ✘ Ya Usaste $numkey_used Keys  ✅\n ⚠️ Solicita Acceso Privado Ilimitado a $(cat < /etc/ADM-db/resell) ⚠️\n"
-bot_retorno+="$LINE\n"
-bot_retorno+="  🛡️  Limite Aplicado  🛡️ \n"
-bot_retorno+="$LINE\n"
-bot_retorno+=" 🧬 Soporte : Ubuntu 14.04 - 16.04 - 18.04 - 20.04\n         𝙍𝙚𝙘𝙤𝙢𝙚𝙣𝙙𝙖𝙙𝙤 𝙐𝙗𝙪𝙣𝙩𝙪 18.04 \n  🪦 Solicita Creditos de tu KEY 🛡️⚔️\n"
-bot_retorno+=" 🔐 『 $numkey_used 』𝙆𝙚𝙮𝙨 𝙐𝙨𝙖𝙙𝙖𝙨 🔓,『 $numkey_gen 』𝙆𝙚𝙮𝙨 𝙂𝙚𝙣𝙚𝙧𝙖𝙙𝙖𝙨 🗝️ \n"
-bot_retorno+=" ⌚⌚ Hora Actual del Bot : $(printf '%(%D-%H:%M:%S)T')⌚⌚\n"
-bot_retorno+="$LINE\n"
-msj_fun
-}
 }
 fun_list () {
 rm ${SCPT_DIR}/*.x.c &> /dev/null
