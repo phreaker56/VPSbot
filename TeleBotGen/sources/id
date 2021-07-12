@@ -41,7 +41,8 @@ addID_reply () {
           bot_retor+="Para actualizar el menu de comandos\n"
           bot_retor+="$LINE"
           bot_retor+="Recuerda adquirir creditos, o Realizar tu donativo Voluntario  \n Paypal : chumogh@gmail.com\n"
-          bot_retor+="Si tienes inconvenientes con el Bot \n Contactame : https://wa.me/593987072611\n"
+          bot_retor+="Si tienes inconvenientes con el BotGen \n Contactame : $(cat < /etc/ADM-db/resell)\n"
+          bot_retor+="Para mantener tu acceso al BotGen Recuerda Mostrar tu Token de Donacion o Compra\n"
           bot_retor+="$LINE\n"
       msj_fun
       msj_add ${message_text[$id]}
