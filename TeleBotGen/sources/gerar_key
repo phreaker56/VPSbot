@@ -72,6 +72,7 @@ nombrevalue="${chatuser}"
 {
 local bot_retorno="$LINE\n"
 bot_retorno+="Limite diario Traspazado\n"
+bot_retorno+="SALIENDO DEL GENERDOR AUTOATICO\n"
 bot_retorno+="$LINE\n"
 msj_fun
 exit
