@@ -8,7 +8,7 @@ bot_retorno="====================\n"
            bot_retorno+="===========================================\n"
           bot_retorno+="𝚂𝚞 𝙸𝙳 【 ${chatuser} 】\n"
           bot_retorno+="===========================================\n"
-          bot_retorno+="Para estar Autorizado, Realiza una Donacion\n y envia tu Token de Donacion a $(cat < /etc/ADM-db/resell)"
+          bot_retorno+="Para estar Autorizado, Realiza una Donacion\n y envia tu Token de Donacion a $(cat < /etc/ADM-db/resell)\n"
           bot_retorno+="===========================================\n"
 msj_fun
 } || {
