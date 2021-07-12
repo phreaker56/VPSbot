@@ -4,7 +4,7 @@ idirect="/etc/idir" && [[ ! -d $idirect ]] && mkdir $idirect
 
 myid_src () {
 bot_retorno="====================\n"
-          bot_retorno+="𝙃𝙤𝙡𝙖 【 $message_from_username 】, tu ID No Fue autorizado, Realiza una Donacion \n"
+          bot_retorno+="𝙃𝙤𝙡𝙖 【 @$message_from_username 】, tu ID No Fue autorizado, Realiza una Donacion \n"
            bot_retorno+="===========================================\n"
           bot_retorno+="𝚂𝚞 𝙸𝙳 【 ${chatuser} 】\n"
           bot_retorno+="===========================================\n"
@@ -14,7 +14,7 @@ msj_fun
 } || {
 [[ $(cat ${CID}|grep "${message_text[$id]}" ) = "" ]] && {
 bot_retorno="====================\n"
-          bot_retorno+="𝙃𝙤𝙡𝙖 【 $message_from_username 】, Realiza una Donacion para poder usar el BOTGEN \n"
+          bot_retorno+="𝙃𝙤𝙡𝙖 【 @$message_from_username 】, Realiza una Donacion para poder usar el BOTGEN \n"
            bot_retorno+="===========================================\n"
           bot_retorno+="𝚂𝚞 𝙸𝙳 【 ${chatuser} 】\n"
           bot_retorno+="===========================================\n"
