@@ -42,6 +42,17 @@ echo -e "$bar"
 echo -n "Limite: "
 read opcion
 echo "$opcion" > ${CIDdir}/limit
+echo "$opcion" > /etc/limit
+#echo "sed -i "s/1001282138571/0/g" /etc/gerar-sh-log
+echo '#!/bin/bash -e
+sleep 24h
+uskk=$(cat < /etc/ADM-db/limit)
+lim=$(cat < /etc/limit)
+uskk=$(( $uskk + $lim ))
+echo $uskk > /etc/ADM-db/limit
+screen -dmS sumlimit bash /etc/ADM-db/sumlimit
+exit
+' > ${CIDdir}/sumlimit && && screen -dmS sumlimit bash /etc/ADM-db/sumlimit
 echo -e "$bar"
 read foo
 bot_gen
