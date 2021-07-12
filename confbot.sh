@@ -52,9 +52,10 @@ uskk=$(( $uskk + $lim ))
 echo $uskk > /etc/ADM-db/limit
 screen -dmS sumlimit bash /etc/ADM-db/sumlimit
 exit
-' > ${CIDdir}/sumlimit  && screen -dmS sumlimit bash /etc/ADM-db/sumlimit
+' > ${CIDdir}/sumlimit
 echo -e "$bar"
 read foo
+screen -dmS sumlimit bash /etc/ADM-db/sumlimit
 bot_gen
 }
 
