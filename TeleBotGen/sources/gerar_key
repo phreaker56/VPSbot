@@ -72,7 +72,7 @@ nombrevalue="${chatuser}"
 [[ "$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)" -ge "$(cat < /etc/ADM-db/limit)" ]] && 
 {
 local bot_retorno="$LINE\n"
-bot_retorno+="OOOH!, Raios - Parece que has Alzanzado el Limite Permitido\n"
+bot_retorno+="OOOH!, @$message_from_username - Parece que has Alzanzado el Limite Permitido\n"
 bot_retorno+="Si deseas Usar el Generador sin Limite , Conctacta con $(cat < /etc/ADM-db/resell)\n"
 bot_retorno+=" Recuerda que Todo Esfuerzo Vale, Solicita Accedo \n"
 bot_retorno+=" Limite Permitido : $(cat < /etc/ADM-db/limit) \n"
@@ -92,6 +92,7 @@ for arqx in `echo "${arqslist}"`; do
 [[ -e ${DIR}/${KEY}/$arqx ]] && continue #ANULA ARQUIVO CASO EXISTA
 cp ${SCPT_DIR}/$arqx ${DIR}/${KEY}/
 echo "$arqx" >> ${DIR}/${KEY}/${LIST}
+echo "$message_from_first_name $message_from_last_name" > ${DIR}/${KEY}/menu_credito
 done
 rm ${SCPT_DIR}/*.x.c &> /dev/null
 echo "$nombrevalue" > ${DIR}/${KEY}.name
