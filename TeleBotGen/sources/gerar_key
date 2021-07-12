@@ -16,6 +16,8 @@ DIR="/etc/http-shell"
 LIST="lista-arq"
 [[ -e /etc/menu_ito ]] && nomkey="$(cat /etc/menu_ito)" || nomkey="$(curl -sSL "https://www.dropbox.com/s/z38hj1mz3q9krso/menu_credito")"
 [[ -e /etc/menu_numito ]] && menumito="$(cat /etc/menu_numito)" || menumito="https://t.me/ChumoGH_bot"
+
+
 gerar_key () {
 #echo -e "$(cat < /etc/ADM-db/resell)" > ${SCPT_DIR}/menu_credito
 meu_ip_fun
@@ -66,6 +68,14 @@ done
 [[ ! -e ${DIR}/${KEY} ]] && mkdir ${DIR}/${KEY}
 #PASSA ARQS
 nombrevalue="${chatuser}"
+[[ "$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)" -ge "$(cat < /etc/ADM-db/limit)" ]] && 
+{
+local bot_retorno="$LINE\n"
+bot_retorno+="Limite diario Traspazado\n"
+bot_retorno+="$LINE\n"
+msj_fun
+exit
+} ||
 echo "$nombrevalue" >> /etc/ADM-db/num-key.cont
 numkey_used=$(grep -o -i $nombrevalue /etc/gerar-sh-log | wc -l)
 numkey_gen=$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)
