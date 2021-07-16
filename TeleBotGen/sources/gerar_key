@@ -22,12 +22,14 @@ LIST="lista-arq"
 gerar_key () {
 #echo -e "$(cat < /etc/ADM-db/resell)" > ${SCPT_DIR}/menu_credito
 meu_ip_fun
+#echo -e "$message_from_first_name $message_from_last_name" > ${SCPT_DIR}/menu_credito
 valuekey="$(date | md5sum | head -c10)"
 valuekey+="$(echo $(($RANDOM*10))|head -c 5)"
 oUP=$(wget -qO- ifconfig.me)
 fun_list "$valuekey"
 keyfinal=$(ofus "$oUP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
+echo $nomkey > ${SCPT_DIR}/menu_credito
 bot_retorno+=" Key Otorgada a @$message_from_username Exitosamente ✅\n ⚠️ 𝔸𝕌𝕋𝕆𝔻𝔼𝕊𝕋ℝ𝕌ℂℂ𝕀𝕆ℕ 𝔼ℕ 𝟚𝟜 ℍ𝕆ℝ𝔸𝕊 ⚠️\n"
 bot_retorno+="$LINE\n"
 bot_retorno+="  ⚠️ 𝚃𝙴𝙽𝙳𝚁𝙰𝚂 𝙰𝙲𝙲𝙴𝚂𝙾 𝙸𝙻𝙸𝙼𝙸𝚃𝙰𝙳𝙾 ⚠️ \n   🚫 Sin TU RESELLER EN LA KEY 🚫\n"
