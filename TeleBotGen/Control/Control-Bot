@@ -1,6 +1,6 @@
 67.205.167.146 server "Principal"
 135.148.32.2 SERVER-Principal-Digital
-*.*.*.* New-All 
+0.0.0.0 New-All 
 51.222.87.128 Cliente 30/04
 192.241.142.249 Cliente 06/04
 200.14.81.151 Chile
@@ -12,7 +12,7 @@
 167.172.29.130 08/05/2021
 212.237.31.18 aldiux
 192.99.70.201 CHAMAKITYTO
-198.199.81.52 compra-18-junio
+198.199.81.52 | 18-junio
 165.227.194.106 | 16-julio
 140.238.145.217 | 14-Julio
 20.85.209.22 | 16-julio
