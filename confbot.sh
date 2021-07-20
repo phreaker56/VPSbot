@@ -267,7 +267,7 @@ echo -e "\033[1;32m[5] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "MENSAJ
 echo -e "\033[1;32m[6] \033[1;36m> \033[1;37m$(source trans -b pt:${tr} "MANUAL De Uso")"
 echo -e "\033[1;32m[7] \033[1;36m> \033[1;37mAutorizar ID Limitado $PID_on"
 echo -e "\033[1;32m[8] \033[1;36m> \033[1;37mActualizar BotGen"
-echo -e "\033[1;32m[9] \033[1;36m> \033[1;37m$(source trans -b pt:${tr} "Aplicar Limite diario de Generadas \033[1;32m$limted")"
+echo -e "\033[1;32m[9] \033[1;36m> \033[1;37m$(source trans -b pt:${tr} "Aplicar Limite diario de Generadas") \033[1;32m$limted"
 echo -e "\033[1;32m[10] \033[1;36m> \033[1;37mAplicar Mensaje de Bienvenida de No Autorizado"
 echo -e "$bar"
 echo -e "$bar"
