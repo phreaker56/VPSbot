@@ -166,6 +166,7 @@ ShellBot.InlineKeyboardButton --button 'botao_conf' --line 2 --text 'MENU' --cal
 ShellBot.InlineKeyboardButton --button 'botao_conf' --line 3 --text 'GENERAR KEY' --callback_data '/keygen'
 ShellBot.InlineKeyboardButton --button 'botao_user' --line 1 --text 'GENERAR KEY' --callback_data '/keygen'
 ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text '💰 DONAR 💰' --callback_data  '1' --url 'https://www.paypal.me/ChumoGH'
+ShellBot.InlineKeyboardButton --button 'botao_user' --line 2 --text ' Contacto 📲' --callback_data  '1' --url 'https://wa.me/593987072611?text=Hola!,%20ℂ𝕙𝕦𝕞𝕠𝔾ℍ%20Me%20interesa%20Conocer%20más%20sobre%20el%20ADM.'
 
 ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'Donar Paypal' --callback_data '1' --url 'https://www.paypal.me/ChumoGH'
 ShellBot.InlineKeyboardButton --button 'botao_donar' --line 2 --text 'ACCEDER WHATSAPP' --callback_data '1' --url 'https://wa.me/593987072611'
