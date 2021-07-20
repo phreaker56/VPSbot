@@ -1,4 +1,7 @@
 #!/bin/bash
+[[ -e /etc/ADM-db/idioma_menuinst ]] && tr=$(cat < /etc/ADM-db/idioma_menuinst)
+text1=$(source trans -b pt:${tr} "MENU DE COMANDOS ")
+text2=$(source trans -b pt:${tr} "INSTRUCCIONES DE COMANDOS ")
 menu_src () {
 #namcli=$(bash /etc/ADM-db/BotGen.sh | grep  message_from_first_name | grep message_from_first_name | grep -i message_from_first_name | awk {'print $4'})
 #${message_text[$usuario]}
@@ -13,8 +16,8 @@ bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  $message_from_firs
 			 bot_retorno+="𝙃𝙤𝙡𝙖 【 @$message_from_username 】, $(source trans -b pt:${tr} "tu ID No Fue autorizado, Realiza una Donacion ") \n"
 			 bot_retorno+="$LINE\n"
 			 bot_retorno+="/ID    | Muestra sus ID |\n"
-			 bot_retorno+="/menu  | $(source trans -b pt:${tr} "MENU DE COMANDOS  ")\n"
-			 bot_retorno+="/ayuda | $(source trans -b pt:${tr} "INSTRUCCIONES DE COMANDOS  ")\n"
+			 bot_retorno+="/menu  | $text1\n"
+			 bot_retorno+="/ayuda | $text2\n"
 			 bot_retorno+="$LINE\n"
 			 bot_retorno+="Si tienes inconvenientes con el BotGEN \n Contactame : $(cat < /etc/ADM-db/resell)\n"
 			 bot_retorno+="$LINE\n"
