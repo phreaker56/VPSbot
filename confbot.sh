@@ -2,7 +2,8 @@
 SCPresq="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0NodW1vR0gvVlBTYm90L21haW4vVGVsZUJvdEdlbi9zb3VyY2Vz"
 SUB_DOM='base64 -d'
 bar="\e[0;36m=====================================================\e[0m"
-
+[[ -e /etc/ADM-db/idioma_menuinst ]] && tr=$(cat < /etc/ADM-db/idioma_menuinst)
+#text=$(source trans -b pt:${tr} "Instalando ")
 check_ip () {
 MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
 MIP2=$(wget -qO- ipv4.icanhazip.com)
@@ -177,7 +178,7 @@ clear
 echo -e "$bar"
 echo -e "            \e[47m\e[30m Instrucciones rapidas \e[0m"
 echo -e "$bar"
-echo -e "\033[1;37m   Es necesario crear un bot en \033[1;32m@BotFather "
+echo -e "\033[1;37m  $(source trans -b pt:${tr} " Es necesario crear un bot en ")\033[1;32m@BotFather "
 echo -e "$bar"
 echo -e "\033[1;32m1- \033[1;37mEn su apps telegram ingrese a @BotFather"
 echo -e "\033[1;32m2- \033[1;37mDigite el comando \033[1;31m/newbot"
@@ -258,19 +259,19 @@ limcont=$(cat /etc/ADM-db/limit)
 echo -e "$bar"
 echo -e "     \e[47m \e[30m>>>>>>  BotGen by \e[1;36mChumoGH\e[1;32m  $(cat ${CIDdir}/vercion)\e[0m\e[47m \e[30m<<<<<< \e[0m"
 echo -e "$bar"
-echo -e "\033[1;32m[1] \033[1;36m> \033[1;37mTOKEN DEL BOT $tk"
-echo -e "\033[1;32m[2] \033[1;36m> \033[1;37mINICIAR/PARAR BOT $PID_GEN\033[0m"
-echo -e "\033[1;32m[3] \033[1;36m> \033[1;37mID DE USUARIO TELEGRAM $adid"
-echo -e "\033[1;32m[4] \033[1;36m> \033[1;37m Cambiar Contacto -> $(cat < ${CIDdir}/resell)"
-echo -e "\033[1;32m[5] \033[1;36m> \033[1;37mMENSAJE DE PRUEBA"
-echo -e "\033[1;32m[6] \033[1;36m> \033[1;37mMANUAL De Uso"
+echo -e "\033[1;32m[1] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "TOKEN DEL BOT $tk ")"
+echo -e "\033[1;32m[2] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "INICIAR/PARAR BOT $PID_GEN")\033[0m"
+echo -e "\033[1;32m[3] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "ID DE USUARIO TELEGRAM ") $adid"
+echo -e "\033[1;32m[4] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "Cambiar Contacto ")-> $(cat < ${CIDdir}/resell)"
+echo -e "\033[1;32m[5] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "MENSAJE DE PRUEBA")"
+echo -e "\033[1;32m[6] \033[1;36m> \033[1;37m$(source trans -b pt:${tr} "MANUAL De Uso")"
 echo -e "\033[1;32m[7] \033[1;36m> \033[1;37mAutorizar ID Limitado $PID_on"
 echo -e "\033[1;32m[8] \033[1;36m> \033[1;37mActualizar BotGen"
-echo -e "\033[1;32m[9] \033[1;36m> \033[1;37mAplicar Limite diario de Generadas \033[1;32m$limted"
+echo -e "\033[1;32m[9] \033[1;36m> \033[1;37m$(source trans -b pt:${tr} "Aplicar Limite diario de Generadas \033[1;32m$limted")"
 echo -e "\033[1;32m[10] \033[1;36m> \033[1;37mAplicar Mensaje de Bienvenida de No Autorizado"
 echo -e "$bar"
 echo -e "$bar"
-echo -e "\e[1;32m[0] \e[36m>\e[0m \e[47m\e[30m <<ATRAS "
+echo -e "\e[1;32m[0] \e[36m>\e[0m \e[47m\e[30m << $(source trans -b pt:${tr} "ATRAS ")"
 echo -e "$bar"
 echo -n "Opcion: "
 read opcion
