@@ -93,6 +93,7 @@ done
  }
 [[ -e /root/token ]] && mv /root/token /etc/ADM-db/token 
 [[ -e /root/Admin-ID ]] && mv /root/Admin-ID /etc/ADM-db/Admin-ID 
+[[ -e /root/User-ID ]] && mv /root/User-ID /etc/ADM-db/User-ID 
 echo "Restaurando Token y ADMINISTRADOR"
  rm $HOME/lista-arq
  read -p "Presiona Enter para continuar"
@@ -223,12 +224,12 @@ ID="$(cat /etc/ADM-db/Admin-ID)"
 		echo -e "$bar"
 		read foo
 	} || {
-		MENSAJE="Esto es un mesaje de prueba!"
+		MENSAJE="Hola, Mensale de Prueba del BotGen Generador!"
 		URL="https://api.telegram.org/bot$TOKEN/sendMessage"
 		curl -s -X POST $URL -d chat_id=$ID -d text="$MENSAJE" &>/dev/null
 		clear
 		echo -e "$bar"
-		echo -e "\033[1;37m mensaje enviado...!"
+		echo -e "\033[1;37m Mensaje enviado Exitosamente...!"
 		echo -e "$bar"
 		sleep 2
 	}
@@ -241,6 +242,7 @@ act-bot () {
 echo "Respaldando TOKEN y ADMINISTRADOR" 
 [[ -e /etc/ADM-db/token ]] && mv /etc/ADM-db/token /root/token
 [[ -e /etc/ADM-db/Admin-ID ]] && mv /etc/ADM-db/Admin-ID /root/Admin-ID
+[[ -e /etc/ADM-db/User-ID ]] && mv /etc/ADM-db/User-ID /root/User-ID
 rm -rf /etc/ADM-db/sources/gerar_key && download
 }
 
@@ -260,8 +262,8 @@ limcont=$(cat /etc/ADM-db/limit)
 echo -e "$bar"
 echo -e "     \e[47m \e[30m>>>>>>  BotGen by \e[1;36mChumoGH\e[1;32m  $(cat ${CIDdir}/vercion)\e[0m\e[47m \e[30m<<<<<< \e[0m"
 echo -e "$bar"
-echo -e "\033[1;32m[1] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "TOKEN DEL BOT $tk ")"
-echo -e "\033[1;32m[2] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "INICIAR/PARAR BOT $PID_GEN")\033[0m"
+echo -e "\033[1;32m[1] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "TOKEN DEL BOT") $tk "
+echo -e "\033[1;32m[2] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "INICIAR/PARAR BOT") $PID_GEN\033[0m"
 echo -e "\033[1;32m[3] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "ID DE USUARIO TELEGRAM ") $adid"
 echo -e "\033[1;32m[4] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "Cambiar Contacto ")-> $(cat < ${CIDdir}/resell)"
 echo -e "\033[1;32m[5] \033[1;36m> \033[1;37m $(source trans -b pt:${tr} "MENSAJE DE PRUEBA")"
