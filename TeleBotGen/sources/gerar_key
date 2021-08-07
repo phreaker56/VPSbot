@@ -77,6 +77,8 @@ nombrevalue="${chatuser}"
 {
 local bot_retorno="$LINE\n"
 bot_retorno+="OOOH!, @$message_from_username - Parece que has Alzanzado el Limite Permitido\n"
+bot_retorno+=" TOTAL DE KEYS USADAS EN EL BOT 🔮『 $(cat < /etc/http-instas) 』\n"
+bot_retorno+="$LINE\n"
 bot_retorno+="Si deseas Usar el Generador sin Limite , Conctacta con $(cat < /etc/ADM-db/resell)\n"
 bot_retorno+=" Recuerda que Todo Esfuerzo Vale, Solicita Acceso \n"
 bot_retorno+=" Si Generaste Keys, Usalas no gastes Limite en vano  \n"
