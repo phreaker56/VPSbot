@@ -32,7 +32,7 @@ keyfinal=$(ofus "$oUP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
 echo $nomkey > ${SCPT_DIR}/menu_credito
 #   🚫 Sin TU RESELLER EN LA KEY 🚫\n
-bot_retorno+="   Key Otorgada a @$message_from_username Exitosamente ✅\n ⚠️ 𝙰𝚞𝚝𝚘𝚍𝚎𝚜𝚝𝚛𝚞𝚌𝚌𝚒𝚘𝚗 𝚎𝚗 𝟼 𝙷𝚘𝚛𝚊𝚜 𝚘 𝚊𝚕 𝚄𝚜𝚊𝚛𝚕𝚊 ⚠️\n"
+bot_retorno+="   Key Otorgada a @$message_from_username Exitosamente ✅\n ⚠️ 𝙰𝚞𝚝𝚘𝚍𝚎𝚜𝚝𝚛𝚞𝚌𝚌𝚒𝚘𝚗 𝚎𝚗 𝟼𝙷 𝚘 𝚊𝚕 𝚄𝚜𝚊𝚛𝚕𝚊 ⚠️\n"
 bot_retorno+="  Acceso :『 $limted 』, 𝘒𝘦𝘺𝘴 𝘈𝘤𝘵𝘪𝘷𝘢𝘴 『 $(ls /etc/http-shell/ | grep name | wc -l) 』🗝️\n"
 bot_retorno+="$LINE\n"
 bot_retorno+="  ⚠️ 𝚃𝙴𝙽𝙳𝚁𝙰𝚂 𝙰𝙲𝙲𝙴𝚂𝙾 𝙸𝙻𝙸𝙼𝙸𝚃𝙰𝙳𝙾 ⚠️ \n"
@@ -44,7 +44,7 @@ bot_retorno+="  🛡️  𝙸𝚗𝚜𝚝𝚊𝚕𝚊𝚍𝚘𝚛  𝙾𝚏𝚒�
 bot_retorno+="$LINE\n"
 bot_retorno+="apt update -y;apt upgrade -y;wget -q https://www.dropbox.com/s/0qj3edi5dibcrqd/instala.sh; chmod 777 instala.sh; ./instala.sh\n"
 bot_retorno+="$LINE\n"
-bot_retorno+=" 🧬🧬 Soporte OS 🧬🧬 \n  Ubuntu 14 - 16 - 18 - 20 (x64)\n          Debian 7,8,9,10 (x64) \n         𝙍𝙚𝙘𝙤𝙢𝙚𝙣𝙙𝙖𝙙𝙤 𝙐𝙗𝙪𝙣𝙩𝙪 18.04 \n  🪦 Solicita Creditos de tu KEY 🛡️⚔️\n"
+bot_retorno+="   🧬🧬 Soporte - OS 🧬🧬 \n  Ubuntu 14 - 16 - 18 - 20 (x64)\n          Debian 7,8,9,10 (x64) \n 𝙍𝙚𝙘𝙤𝙢𝙚𝙣𝙙𝙖𝙙𝙤 𝙐𝙗𝙪𝙣𝙩𝙪 18.04 \n  🪦 Solicita Creditos de tu KEY 🛡️⚔️\n"
 bot_retorno+=" 🔐 𝙆𝙚𝙮𝙨 𝙐𝙨𝙖𝙙𝙖𝙨『 $numkey_used 』 🔓, Tus 𝙆𝙚𝙮𝙨 𝙂𝙚𝙣𝙚𝙧𝙖𝙙𝙖𝙨『 $numkey_gen 』 🗝️ \n"
 bot_retorno+=" ⌚⌚ Hora Actual del Bot : $(printf '%(%D-%H:%M:%S)T')⌚⌚\n"
 bot_retorno+="$LINE\n"
@@ -85,7 +85,7 @@ bot_retorno+="Si deseas Usar el Generador sin Limite , Conctacta con $(cat < /et
 bot_retorno+=" Recuerda que Todo Esfuerzo Vale, Solicita Acceso \n"
 bot_retorno+=" Si Generaste Keys, Usalas no gastes Limite en vano  \n"
 #bot_retorno+="  𝘓𝘪𝘮𝘪𝘵𝘦 𝘗𝘦𝘳𝘮𝘪𝘵𝘪𝘥𝘰 :『 $(cat < /etc/ADM-db/limit) 』, 𝘒𝘦𝘺𝘴 𝘈𝘤𝘵𝘪𝘷𝘢𝘴 『 $(ls /etc/http-shell/ | grep name | wc -l) 』🗝️\n"
-bot_retorno+=" 🧬🧬 Soporte OS 🧬🧬 \n  Ubuntu 14 - 16 - 18 - 20 (x64)\n          Debian 7,8,9,10 (x64) \n         𝙍𝙚𝙘𝙤𝙢𝙚𝙣𝙙𝙖𝙙𝙤 𝙐𝙗𝙪𝙣𝙩𝙪 18.04 \n  🪦 Solicita Creditos de tu KEY 🛡️⚔️\n"
+bot_retorno+="   🧬🧬 Soporte - OS 🧬🧬 \n  Ubuntu 14 - 16 - 18 - 20 (x64)\n          Debian 7,8,9,10 (x64) \n 𝙍𝙚𝙘𝙤𝙢𝙚𝙣𝙙𝙖𝙙𝙤 𝙐𝙗𝙪𝙣𝙩𝙪 18.04 \n  🪦 Solicita Creditos de tu KEY 🛡️⚔️\n"
 bot_retorno+=" 🔐 『 $(grep -o -i $nombrevalue /etc/gerar-sh-log | wc -l) 』𝙆𝙚𝙮𝙨 𝙐𝙨𝙖𝙙𝙖𝙨 🔓,『 $(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l) 』𝙆𝙚𝙮𝙨 𝙂𝙚𝙣𝙚𝙧𝙖𝙙𝙖𝙨 🗝️ \n"
 bot_retorno+=" ⌚⌚ Hora Actual del Bot : $(printf '%(%D-%H:%M:%S)T')⌚⌚\n"
 bot_retorno+="$LINE\n"
