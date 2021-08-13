@@ -17,7 +17,7 @@ LIST="lista-arq"
 [[ -e /etc/menu_ito ]] && nomkey="$(cat /etc/menu_ito)" || nomkey="$(curl -sSL "https://www.dropbox.com/s/z38hj1mz3q9krso/menu_credito")"
 [[ -e /etc/menu_numito ]] && menumito="$(cat /etc/menu_numito)" || menumito="https://t.me/ChumoGH_bot"
 limcont=$(cat /etc/ADM-db/limit) 
-[[ "${limcont}" -ge "998" ]] && limted=" ∞ " || limted=$(cat /etc/ADM-db/limit)
+[[ "$limcont" -ge "998" ]] && limted=" ∞ " || limted=$(cat /etc/ADM-db/limit)
 
 
 gerar_key () {
@@ -32,7 +32,7 @@ keyfinal=$(ofus "$oUP:8888/$valuekey/$LIST")
 local bot_retorno="$LINE\n"
 echo $nomkey > ${SCPT_DIR}/menu_credito
 #   🚫 Sin TU RESELLER EN LA KEY 🚫\n
-bot_retorno+="   Key Otorgada a @$message_from_username Exitosamente ✅\n ⚠️ 𝙰𝚞𝚝𝚘𝚍𝚎𝚜𝚝𝚛𝚞𝚌𝚌𝚒𝚘𝚗 𝚎𝚗 𝟼𝙷 𝚘 𝚊𝚕 𝚄𝚜𝚊𝚛𝚕𝚊 ⚠️\n"
+bot_retorno+="   Key Otorgada a @$message_from_username Exitosamente ✅\n ⚠️ D𝚎𝚜𝚝𝚛𝚞𝚌𝚌𝚒𝚘𝚗 𝚎𝚗 𝟼𝙷 𝚘 𝚊𝚕 𝚄𝚜𝚊𝚛𝚕𝚊 ⚠️\n"
 bot_retorno+="  Acceso :『 $limted 』, 𝘒𝘦𝘺𝘴 𝘈𝘤𝘵𝘪𝘷𝘢𝘴 『 $(ls /etc/http-shell/ | grep name | wc -l) 』🗝️\n"
 bot_retorno+="$LINE\n"
 bot_retorno+="  ⚠️ 𝚃𝙴𝙽𝙳𝚁𝙰𝚂 𝙰𝙲𝙲𝙴𝚂𝙾 𝙸𝙻𝙸𝙼𝙸𝚃𝙰𝙳𝙾 ⚠️ \n"
