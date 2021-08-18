@@ -56,7 +56,7 @@ screen -dmS sumlimit bash /etc/ADM-db/sumlimit
 exit
 ' > ${CIDdir}/sumlimit
 echo -e "$bar"
-read foo
+read -p "Presione Enter para continuar "
 screen -dmS sumlimit bash /etc/ADM-db/sumlimit
 bot_gen
 }
@@ -110,7 +110,7 @@ read opcion
 echo "$opcion" > ${CIDdir}/token
 echo -e "$bar"
 echo -e "  \033[1;32mtoken se guardo con exito!" && echo -e "$bar" && echo -e "  \033[1;37mPara tener acceso a todos los comandos del bot\n  deve iniciar el bot en la opcion 2.\n  desde su apps (telegram). ingresar al bot!\n  digite el comando \033[1;31m/id\n  \033[1;37mel bot le respodera con su ID de telegram.\n  copiar el ID e ingresar el mismo en la opcion 3" && echo -e "$bar"
-read foo
+read -p "Presione Enter para continuar "
 bot_gen
 }
 
@@ -123,7 +123,7 @@ echo -n "RESELLER: "
 read opction
 echo "$opction" > ${CIDdir}/resell
 echo -e "$bar"
-read foo
+read -p "Presione Enter para continuar "
 bot_gen
 }
 
@@ -137,7 +137,7 @@ read opcion
 echo "$opcion" > ${CIDdir}/Admin-ID
 echo -e "$bar"
 echo -e "  \033[1;32mID guardo con exito!" && echo -e "$bar" && echo -e "  \033[1;37mdesde su apps (telegram). ingresar al bot!\n  digite el comando \033[1;31m/menu\n  \033[1;37mprueve si tiene acceso al menu extendido." && echo -e "$bar"
-read foo
+read -p "Presione Enter para continuar "
 bot_gen
 }
 
@@ -170,7 +170,7 @@ clear
 msg -bar
 echo -e "\033[1;31m            BotGen fuera de linea"
 msg -bar
-sleep 3
+read -p "Presione Enter para continuar "
 fi
 bot_gen
 }
@@ -193,7 +193,7 @@ echo -e "\033[1;32m8- \033[1;37mEn su apps telegram, inicie el bot creado\n   di
 echo -e "\033[1;32m9- \033[1;37mIngrese el ID en la\n   opcion \033[1;32m[3] \033[1;31m> \033[1;37mID DE USUARIO TELEGRAM"
 echo -e "\033[1;32m10-\033[1;37mcomprueve que tiene acceso a\n   las opciones avanzadas de su bot."
 echo -e "$bar"
-read foo
+read -p "Presione Enter para continuar "
 bot_gen
 }
 
@@ -231,7 +231,7 @@ ID="$(cat /etc/ADM-db/Admin-ID)"
 		echo -e "$bar"
 		echo -e "\033[1;37m Mensaje enviado Exitosamente...!"
 		echo -e "$bar"
-		sleep 2
+		sleep 0.5s
 	}
 }
 
