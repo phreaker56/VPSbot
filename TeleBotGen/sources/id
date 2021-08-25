@@ -26,12 +26,25 @@ msj_fun
 
 deleteID_reply () {
 sed -i "${message_text[$id]}/d" ${CID}
+ids=$(echo ${message_text[$id]} | awk '{print $1}' | sed -e 's/[^a-z0-9 -]//ig')
 bot_retorno="$LINE\n"
           bot_retorno+=" ID ELIMINADO EXITOSAMENTE!\n"
-          bot_retorno+=" ID Borrado: ${message_text[$id]}\n"
+          bot_retorno+=" ID Eliminado: ${ids}\n"
           bot_retorno+="$LINE\n"
-msj_fun
-upfile_src
+
+          bot_retor="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  Nuevamente 𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
+          bot_retor+="𝙃𝙤𝙡𝙖 『 @$message_from_username 』\n"
+          bot_retor+="Desafortunadamente tu Membresia ha Finalizado\n"
+          bot_retor+="Fecha de Corte : 00/00/0000 \n"
+          bot_retor+="Si tienes Dudas, Contacta con $(cat < /etc/ADM-db/resell)\n"
+          bot_retor+="$LINE\n"
+          bot_retor+="Recuerda adquirir creditos, o Realizar una Colaboracion\n Paypal : chumogh@outlook.com\n"
+          bot_retor+="Si tienes inconvenientes con el BotGen \n Contactame : $(cat < /etc/ADM-db/resell)\n"
+          bot_retor+="Para mantener tu acceso al BotGen Recuerda Mostrar tu Token de Donacion o Compra\n"
+          bot_retor+="$LINE\n"
+      msj_fun
+      msj_add ${ids}
+      upfile_src
 }
 
 addID_reply () {
@@ -39,12 +52,14 @@ addID_reply () {
         #echo "/${message_text[$id]} | $(date '+%d-%m-%Y' -d " +$dias days")" >> $idirect/idtegm
         #cat $idirect/idtegm | awk '{print $1}' >> ${CID}
         echo "/${message_text[$id]}" >> ${CID}
+        ids=$(echo ${message_text[$id]} | awk '{print $1}' | sed -e 's/[^a-z0-9 -]//ig')
           bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  $message_from_first_name  𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
           bot_retorno+="✅ *ID agregado * ✅\n"
           bot_retorno+="$LINE\n"
+          #bot_retorno+="$(< ${CID})\n"
           bot_retorno+="$(< ${CID})\n"
           bot_retorno+="$LINE\n"
-          bot_retorno+="New ID: ${message_text[$id]}\n"
+          bot_retorno+="New ID: ${ids}\n"
           bot_retorno+="$LINE"
 
           bot_retor="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  Nuevamente 𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
@@ -59,7 +74,7 @@ addID_reply () {
           bot_retor+="Para mantener tu acceso al BotGen Recuerda Mostrar tu Token de Donacion o Compra\n"
           bot_retor+="$LINE\n"
       msj_fun
-      msj_add ${message_text[$id]}
+      msj_add ${ids]}
       upfile_src
     } || {
           bot_retorno="====ERROR====\n"
@@ -68,13 +83,3 @@ addID_reply () {
       msj_fun
     }
 }
-
-
-
-
-
-
-
-
-
-
