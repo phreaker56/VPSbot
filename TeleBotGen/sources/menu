@@ -27,10 +27,11 @@ bot_retorno="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  $message_from_firs
 		 	numkey_used=$(grep -o -i $message_chat_id /etc/gerar-sh-log | wc -l)
 			numkey_gen=$(grep -o -i $message_chat_id /etc/ADM-db/num-key.cont | wc -l)
 			data_user=$(cat ${CID}|grep "${chatuser}" | awk -F "|" '{print $2}')
+			data_sec=$(date +%s)
 			data_user_sec=$(date +%s --date="$data_user")
 			variavel_soma=$(($data_user_sec - $data_sec))
 			dias_use=$(($variavel_soma / 86400))
-			[[ "$dias_use" -le 0 ]] && dias_use=0 || dias_use=$(($dias_use + 1))
+			[[ "$dias_use" -le 0 ]] && dias_use=0 || dias_use=$((dias_use + 1))
 			bot_retorno+="$LINE\n"
 			 bot_retorno+="  ⚠️ TENDRAS ACCESO ILIMITADO POR『 $dias_use 』DIAS⚠️ \n  🚫 INCLUIDO TU RESELLER EN LA KEY 🚫"
 			 bot_retorno+="$LINE\n"
