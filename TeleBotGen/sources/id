@@ -27,6 +27,7 @@ msj_fun
 deleteID_reply () {
 sed -i "${message_text[$id]}/d" ${CID}
 ids=$(echo ${message_text[$id]} | awk '{print $1}' | sed -e 's/[^a-z0-9 -]//ig')
+idc=$(echo ${message_text[$id]} | awk '{print $3}' | sed -e 's/[^a-z0-9 -]//ig')
 bot_retorno="$LINE\n"
           bot_retorno+=" ID ELIMINADO EXITOSAMENTE!\n"
           bot_retorno+=" ID Eliminado: ${ids}\n"
@@ -36,7 +37,7 @@ bot_retorno="$LINE\n"
           #bot_retor+="𝙃𝙤𝙡𝙖 『 $message_from_first_name $message_from_last_name 』\n"
           bot_retor+="Desafortunadamente tu Membresia ha Finalizado\n"
           #bot_retor+=" ⌚⌚ Hora Actual del Bot : ⌚⌚\n"
-          bot_retor+="Fecha de Corte : $(printf '%(%D-%H:%M:%S)T') \n"
+          bot_retor+="Fecha de Corte : $idc \n"
           bot_retor+="Si tienes Dudas, Contacta con $(cat < /etc/ADM-db/resell)\n"
           bot_retor+="$LINE\n"
           bot_retor+="Recuerda adquirir creditos, o Realizar una Colaboracion\n Paypal : chumogh@outlook.com\n"
@@ -63,6 +64,7 @@ addID_reply () {
           bot_retorno+="$(< ${CID})\n"
           bot_retorno+="$LINE\n"
           bot_retorno+="New ID: ${ids}\n"
+          bot_retorno+="Valido Hasta : ${valid}\n"
           bot_retorno+="$LINE"
 
           bot_retor="  🎊 𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘  Nuevamente 𝚊𝚕  𝙱𝚘𝚝𝙶𝚎𝚗  𝙲𝚑𝚞𝚖𝚘𝙶𝙷-𝙰𝙳𝙼  🎊\n"
