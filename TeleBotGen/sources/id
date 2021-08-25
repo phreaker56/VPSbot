@@ -25,9 +25,9 @@ msj_fun
 }
 
 deleteID_reply () {
-sed -i "${message_text[$id]}/d" ${CID}
 ids=$(echo ${message_text[$id]} | awk '{print $1}' | sed -e 's/[^a-z0-9 -]//ig')
 idc=$(echo ${message_text[$id]} | awk '{print $3}' | sed -e 's/[^a-z0-9 -]//ig')
+sed -i "${message_text[$id]}/d" ${CID}
 bot_retorno="$LINE\n"
           bot_retorno+=" ID ELIMINADO EXITOSAMENTE!\n"
           bot_retorno+=" ID Eliminado: ${ids}\n"
