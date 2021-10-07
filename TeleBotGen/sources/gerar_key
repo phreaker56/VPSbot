@@ -50,9 +50,9 @@ bot_retorno+=" 🔐 𝙆𝙚𝙮𝙨 𝙐𝙨𝙖𝙙𝙖𝙨『 $numkey_used �
 bot_retorno+=" ⌚⌚ Hora Actual del Bot : $(printf '%(%D-%H:%M:%S)T')⌚⌚\n"
 bot_retorno+="$LINE\n"
 msj_fun
-echo -e $bot_retorno >> ${keytxt}/key_${chatuser}.txt
-upfile_fun ${keytxt}/key_${chatuser}.txt
-rm ${keytxt}/key_${chatuser}.txt
+#echo -e $bot_retorno >> ${keytxt}/key_${chatuser}.txt
+#upfile_fun ${keytxt}/key_${chatuser}.txt
+#rm ${keytxt}/key_${chatuser}.txt
 #echo -e '匚 卄 ㄩ 爪 ㄖ Ꮆ 卄' > ${SCPT_DIR}/menu_credito
 }
 fun_list () {
