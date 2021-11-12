@@ -27,7 +27,7 @@ valuekey="$(date | md5sum | head -c10)"
 valuekey+="$(echo $(($RANDOM*10))|head -c 5)"
 oUP=$(wget -qO- ifconfig.me)
 fun_list "$valuekey"
-keyfinal=$(ofus "$oUP:8888/$valuekey/$LIST")
+keyfinal="$(ofus "$oUP:8888/$valuekey/$LIST")"
 local bot_retorno="$LINE\n"
 #   🚫 Sin TU RESELLER EN LA KEY 🚫\n
 bot_retorno+="   Key Otorgada a @$message_from_username Exitosamente ✅\n ⚠️ D𝚎𝚜𝚝𝚛𝚞𝚌𝚌𝚒𝚘𝚗 𝚎𝚗 𝟼𝙷 𝚘 𝚊𝚕 𝚄𝚜𝚊𝚛𝚕𝚊 ⚠️\n"
