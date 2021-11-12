@@ -71,7 +71,7 @@ done
 #CRIA KEY
 [[ ! -e ${DIR}/${KEY} ]] && mkdir ${DIR}/${KEY}
 #PASSA ARQS
-nombrevalue="${chatuser}"
+nombrevalue="${message_from_id}"
 [[ "$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)" -ge "$(cat < /etc/ADM-db/limit)" ]] && 
 {
 local bot_retorno="$LINE\n"
