@@ -23,7 +23,7 @@ limcont=$(cat /etc/ADM-db/limit)
 #echo -e "$(cat < /etc/ADM-db/resell)" > ${SCPT_DIR}/menu_credito
 meu_ip_fun
 [[ -e ${CIDdir}/ress ]] && echo $nomkey > ${SCPT_DIR}/menu_credito || echo -e "$message_from_first_name $message_from_last_name" > ${SCPT_DIR}/menu_credito
-valuekey="$(date | md5sum | head -c10)"
+valuekey="$(date | md5sum | head -c15)"
 #valuekey+="$(echo $(($RANDOM*10))|head -c 5)"
 oUP=$(wget -qO- ifconfig.me)
 fun_list "$valuekey"
