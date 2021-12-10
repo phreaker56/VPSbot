@@ -121,8 +121,8 @@ case ${txt[$i]} in
 "w")txt[$i]="2";;
 "4")txt[$i]="b";;
 "b")txt[$i]="4";;
-"/")txt[$i]="S";;
-"S")txt[$i]="/";;
+"/")txt[$i]="K";;
+"K")txt[$i]="/";;
 "5")txt[$i]="S";;
 "S")txt[$i]="5";;
 esac
