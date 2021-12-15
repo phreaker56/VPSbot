@@ -16,11 +16,12 @@ DIR="/etc/http-shell"
 LIST="lista-arq"
 [[ -e /etc/menu_ito ]] && nomkey="$(cat /etc/menu_ito)" || nomkey="$(curl -sSL "https://www.dropbox.com/s/z38hj1mz3q9krso/menu_credito")"
 [[ -e /etc/menu_numito ]] && menumito="$(cat /etc/menu_numito)" || menumito="https://t.me/ChumoGH_bot"
-
+nombrevalue="${message_from_id}"
 gerar_key () {
+numkey_gen=$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)
 limcont=$(cat /etc/ADM-db/limit) 
-[[ "$limcont" -ge "998" ]] && limted=" ∞ " || limted=$(cat /etc/ADM-db/limit)
-[[ "$(( $limcont - $numkey_gen ))" -ge "998" ]] && credres=" ∞ " || credres=$(( $limted - $numkey_gen))
+[[ "$limcont" -ge "998" ]] && limted="∞" || limted=$(cat /etc/ADM-db/limit)
+[[ "$(( $limcont - $numkey_gen ))" -ge "998" ]] && credres="∞" || credres=$(( $limted - $numkey_gen))
 #echo -e "$(cat < /etc/ADM-db/resell)" > ${SCPT_DIR}/menu_credito
 meu_ip_fun
 [[ -e ${CIDdir}/ress ]] && echo $nomkey > ${SCPT_DIR}/menu_credito || echo -e "$message_from_first_name $message_from_last_name" > ${SCPT_DIR}/menu_credito
@@ -56,7 +57,6 @@ fun_list () {
 rm ${SCPT_DIR}/*.x.c &> /dev/null
 unset KEY
 KEY="$1"
-echo $KEY >> /root/ID-tses
 #CRIA DIR
 [[ ! -e ${DIR} ]] && mkdir ${DIR}
 #ENVIA ARQS
