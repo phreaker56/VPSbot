@@ -21,7 +21,7 @@ gerar_key () {
 numkey_gen=$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)
 limcont=$(cat /etc/ADM-db/limit) 
 [[ "$limcont" -ge "998" ]] && limted="∞" || limted=$(cat /etc/ADM-db/limit)
-[[ "$(( $limcont - $numkey_gen ))" -ge "998" ]] && credres="∞" || credres=$(( $limted - $numkey_gen))
+[[ "$(( $limcont - $numkey_gen ))" -ge "900" ]] && credres="∞" || credres=$(( $limted - $numkey_gen))
 #echo -e "$(cat < /etc/ADM-db/resell)" > ${SCPT_DIR}/menu_credito
 meu_ip_fun
 [[ -e ${CIDdir}/ress ]] && echo $nomkey > ${SCPT_DIR}/menu_credito || echo -e "$message_from_first_name $message_from_last_name" > ${SCPT_DIR}/menu_credito
@@ -33,7 +33,7 @@ keyfinal="$(ofus "$oUP:8888/${valuekey}/$LIST")"
 local bot_retorno="$LINE\n"
 #   🚫 Sin TU RESELLER EN LA KEY 🚫\n
 bot_retorno+="  Key $numkey_gen Otorgada a @$message_from_username \n ⚠️ D𝚎𝚜𝚝𝚛𝚞𝚌𝚌𝚒𝚘𝚗 𝚎𝚗 𝟼𝙷 𝚘 𝚊𝚕 𝚄𝚜𝚊𝚛𝚕𝚊 ⚠️\n"
-bot_retorno+="  TUS CREDITOS :『 $limted 』, RESTANTES『 $credres 』🗝️\n"
+bot_retorno+="  TUS CREDITOS :『 $limted 』, RESTANTES『 $(($credres)) 』🗝️\n"
 bot_retorno+="$LINE\n"
 bot_retorno+=" 🛡️ 𝚁𝙴𝚂𝙴𝙻𝙻𝙴𝚁 𝙰𝚌𝚝𝚞𝚊𝚕 🛡️ : $(cat ${SCPT_DIR}/menu_credito)\n"
 bot_retorno+="$LINE\n"
