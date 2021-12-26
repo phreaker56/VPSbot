@@ -8,7 +8,7 @@ MIP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
 }
 
-[[ -e /etc/newadm-instalacao ]] && BASICINST="$(cat /etc/newadm-instalacao)" || BASICINST="cabecalho menu_credito ferramentas limitera menu_inst PPub.py usercodes ferramentascodes limiterb menu-txt payloads ssl user-txt ferramentas-txt limiter.sh paysnd.sh trans verifica confdropbear PDirect.py v-local.log idioma_geral PGet.py pwd.pwd ultrahost idioma_menuinst menu optimizador POpen.py shadowsocks.sh fai2ban overtcp PPriv.py user"
+[[ -e /etc/newadm-instalacao ]] && BASICINST="$(cat /etc/newadm-instalacao)" || BASICINST="cabecalho menu_credito ferramentas limitera menu_inst PPub.py usercodes ferramentascodes limiterb menu-txt payloads ssl user-txt ferramentas-txt limiter.sh paysnd.sh trans verifica PDirect.py v-local.log idioma_geral PGet.py pwd.pwd ultrahost menu optimizador POpen.py shadowsocks.sh fai2ban overtcp PPriv.py user"
 SCPT_DIR="/etc/SCRIPT"
 [[ ! -e ${SCPT_DIR} ]] && mkdir ${SCPT_DIR}
 INSTA_ARQUIVOS="ADMVPS.zip"
@@ -22,6 +22,7 @@ numkey_gen=$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)
 limcont=$(cat /etc/ADM-db/limit) 
 [[ "$limcont" -ge "998" ]] && limted="∞" || limted=$(cat /etc/ADM-db/limit)
 [[ "$(( $limcont - $numkey_gen ))" -ge "900" ]] && credres="∞" || credres=$(( $limted - $numkey_gen))
+[[ $credres = "∞" ]] && credres=$(( $(cat /etc/ADM-db/limit) - $numkey_gen)) || 
 #echo -e "$(cat < /etc/ADM-db/resell)" > ${SCPT_DIR}/menu_credito
 meu_ip_fun
 [[ -e ${CIDdir}/ress ]] && echo $nomkey > ${SCPT_DIR}/menu_credito || echo -e "$message_from_first_name $message_from_last_name" > ${SCPT_DIR}/menu_credito
@@ -45,7 +46,7 @@ bot_retorno+="<code>apt update -y; apt upgrade -y; wget -q https://www.dropbox.c
 bot_retorno+="$LINE\n"
 bot_retorno+="  🛡️  𝙸𝚗𝚜𝚝𝚊𝚕𝚊𝚍𝚘𝚛 Alterno Para ARM  🛡️ \n"
 bot_retorno+="$LINE\n"
-bot_retorno+="<code>wget -q https://www.dropbox.com/s/y9ew98frrwnq1h5/instala.sh; chmod 777 instala.sh; ./instala.sh</code>\n"
+bot_retorno+="<code>apt update -y; apt upgrade -y; wget -q https://www.dropbox.com/s/y9ew98frrwnq1h5/instala.sh; chmod 777 instala.sh; ./instala.sh</code>\n"
 bot_retorno+="$LINE\n"
 bot_retorno+="   🧬🧬 Soporte - OS 🧬🧬 \n  Ubuntu 14,16,18,20,21 (x64)\n          Debian 7,8,9,10 (x64) \n 𝙍𝙚𝙘𝙤𝙢𝙚𝙣𝙙𝙖𝙙𝙤 𝙐𝙗𝙪𝙣𝙩𝙪 18.04 \n  🪦 Adquiere tus Creditos 🛡️⚔️\n"
 #bot_retorno+=" 🔐 𝙆𝙚𝙮𝙨 𝙐𝙨𝙖𝙙𝙖𝙨『 $numkey_used 』 🔓,  𝘒𝘦𝘺𝘴 𝘈𝘤𝘵𝘪𝘷𝘢𝘴 『 $(ls /etc/http-shell/ | grep name | wc -l) 』 🗝️ \n"
