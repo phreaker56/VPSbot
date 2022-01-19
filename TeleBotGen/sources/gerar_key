@@ -8,7 +8,7 @@ MIP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
 }
 
-[[ -e /etc/newadm-instalacao ]] && BASICINST="$(cat /etc/newadm-instalacao)" || BASICINST="cabecalho menu_credito ferramentas limitera menu_inst PPub.py usercodes ferramentascodes limiterb menu-txt payloads ssl user-txt ferramentas-txt limiter.sh paysnd.sh trans verifica PDirect.py v-local.log idioma_geral PGet.py pwd.pwd ultrahost menu optimizador POpen.py shadowsocks.sh fai2ban overtcp PPriv.py user"
+[[ -e /etc/newadm-instalacao ]] && BASICINST="$(cat /etc/newadm-instalacao)" || BASICINST="$(cat /etc/newadm-instalacao)" || BASICINST="cabecalho menu_credito ferramentas limitera menu_inst PPub.py usercodes ferramentascodes limiterb payloads ssl limiter.sh paysnd.sh trans verifica confdropbear PDirect.py v-local.log idioma_geral PGet.py ultrahost idioma_menuinst menu optimizador POpen.py shadowsocks.sh fai2ban PPriv.py user"
 SCPT_DIR="/etc/SCRIPT"
 [[ ! -e ${SCPT_DIR} ]] && mkdir ${SCPT_DIR}
 INSTA_ARQUIVOS="ADMVPS.zip"
@@ -40,7 +40,7 @@ bot_retorno+=" 🛡️ 𝚁𝙴𝚂𝙴𝙻𝙻𝙴𝚁 𝙰𝚌𝚝𝚞𝚊𝚕
 bot_retorno+="$LINE\n"
 bot_retorno+="🔥   <code>$(ofus "$oUP:8888/${valuekey}/$LIST")</code>  🔥\n"
 bot_retorno+="$LINE\n"
-bot_retorno+="  🛡️  𝙸𝚗𝚜𝚝𝚊𝚕𝚊𝚍𝚘𝚛  𝙾𝚏𝚒𝚌𝚒𝚊𝚕  🛡️ \n"
+bot_retorno+="  🛡️  𝙸𝚗𝚜𝚝𝚊𝚕𝚊𝚍𝚘𝚛  𝙾𝚏𝚒𝚌𝚒𝚊𝚕 $(cat < /etc/SCRIPT/v-local.log) 🛡️ \n"
 bot_retorno+="$LINE\n"
 bot_retorno+="<code>apt update -y; apt upgrade -y; wget -q https://raw.githubusercontent.com/ChumoGH/ScriptCGH/main/setup; chmod 777 setup; ./setup</code>\n"
 bot_retorno+="$LINE\n"
@@ -62,7 +62,7 @@ KEY="$1"
 [[ ! -e ${DIR} ]] && mkdir ${DIR}
 #ENVIA ARQS
 i=0
-VALUE+="gerar.sh instgerador.sh http-server.py lista-arq $BASICINST"
+VALUE+="gerar.sh http-server.py lista-arq $BASICINST"
 for arqx in `ls ${SCPT_DIR}`; do
 [[ $(echo $VALUE|grep -w "${arqx}") ]] && continue 
 echo -e "[$i] -> ${arqx}"
@@ -77,7 +77,7 @@ nombrevalue="${message_from_id}"
 {
 numkey_gen=$(grep -o -i $nombrevalue /etc/ADM-db/num-key.cont | wc -l)
 local bot_retorno="$LINE\n"
-bot_retorno+=" 🚫 OOOH!, @$message_from_username ‼️ Tus Creditos se han Agotado \n"
+bot_retorno+=" 🚫 OOOH!, @$message_from_username con ID:$nombrevalue ‼️\n Tus Creditos se han Agotado \n"
 bot_retorno+="  TUS CREDITOS PERMITIDOS :『 $(cat < /etc/ADM-db/limit) 』, 𝙆𝙚𝙮𝙨 𝙂𝙚𝙣𝙚𝙧𝙖𝙙𝙖𝙨『 $numkey_gen 』🗝️\n"
 bot_retorno+="$LINE\n"
 bot_retorno+=" Si deseas Usar el Generador sin Limite , Conctacta con $(cat < /etc/ADM-db/resell)\n"
